@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Board - Find Your Next Career</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <h1 class="text-3xl font-bold text-gray-900">Job Board</h1>
+                </div>
+                <div>
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md">
+                        Post a Job
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Search and Filter Section -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                    <label for="search" class="block text-sm font-medium text-gray-700 mb-1">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-search text-gray-400"></i>
+                        </div>
+                        <input type="text" id="search" name="search"
+                            class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="Job titles, skills, or companies">
+                    </div>
+                </div>
+                <div>
+                    <label for="location" class="block text-sm font-medium text-gray-700 mb-1">Location</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-map-marker-alt text-gray-400"></i>
+                        </div>
+                        <input type="text" id="location" name="location"
+                            class="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="City, state, or remote">
+                    </div>
+                </div>
+                <div>
+                    <label for="jobType" class="block text-sm font-medium text-gray-700 mb-1">Job Type</label>
+                    <select id="jobType" name="jobType"
+                        class="block w-full py-2 pl-3 pr-10 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        <option value="">All Types</option>
+                        <option value="fulltime">Full-time</option>
+                        <option value="parttime">Part-time</option>
+                        <option value="contract">Contract</option>
+                        <option value="internship">Internship</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-end">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md">
+                    Search Jobs
+                </button>
+            </div>
+        </div>
+
+        <!-- Job Listings Section -->
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Featured Jobs</h2>
+        <div id="jobGridContainer" class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
+            <!-- Job cards will be dynamically added here -->
+        </div>
+    </main>
+
+
+    <!-- Job Application Modal -->
+    <div id="jobModal" class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg max-w-3xl w-full max-h-screen overflow-y-auto">
+            <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white">
+                <h3 class="text-xl font-bold text-gray-900" id="modalJobTitle">Senior Full Stack Developer</h3>
+                <button onclick="closeJobModal()" class="text-gray-400 hover:text-gray-500">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <div class="px-6 py-4">
+                <div class="flex items-center mb-4">
+                    <div class="bg-gray-200 rounded-md h-12 w-12 flex items-center justify-center mr-4">
+                        <span class="font-bold text-blue-600" id="modalCompanyInitials">TC</span>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-gray-900" id="modalCompanyName">TechCorp Inc.</h4>
+                        <p class="text-gray-600" id="modalJobLocation">New York, NY (Remote Available)</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span
+                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800"
+                        id="modalJobType">
+                        Full-time
+                    </span>
+                    <span
+                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800"
+                        id="modalSalary">
+                        $120k - $150k
+                    </span>
+                    <span
+                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800"
+                        id="modalWorkType">
+                        Remote
+                    </span>
+                </div>
+
+                <h4 class="text-lg font-semibold mb-2">Job Description</h4>
+                <div class="prose max-w-none mb-6">
+                    <p>We're looking for an experienced Full Stack Developer to join our growing engineering team.
+                        You'll be responsible for developing and maintaining web applications, collaborating with
+                        cross-functional teams, and implementing best practices for code quality and performance.</p>
+
+                    <p>This role offers competitive compensation, flexible remote work options, and the opportunity to
+                        work on cutting-edge technologies in a collaborative environment.</p>
+                </div>
+
+                <h4 class="text-lg font-semibold mb-2">Responsibilities</h4>
+                <ul class="list-disc pl-5 mb-6 space-y-1">
+                    <li>Design, develop, and maintain full-stack web applications using modern frameworks and
+                        technologies</li>
+                    <li>Write clean, efficient, and well-documented code that follows industry best practices</li>
+                    <li>Collaborate with product managers, designers, and other engineers to deliver high-quality
+                        features</li>
+                    <li>Participate in code reviews and mentor junior developers</li>
+                    <li>Troubleshoot and debug issues across the stack</li>
+                    <li>Optimize applications for maximum speed and scalability</li>
+                    <li>Stay up-to-date with emerging trends and technologies</li>
+                </ul>
+
+                <h4 class="text-lg font-semibold mb-2">Requirements</h4>
+                <ul class="list-disc pl-5 mb-6 space-y-1">
+                    <li>5+ years of professional experience in full-stack web development</li>
+                    <li>Proficiency in JavaScript/TypeScript, React, Node.js, and modern frontend frameworks</li>
+                    <li>Experience with RESTful APIs and microservices architecture</li>
+                    <li>Strong knowledge of SQL and NoSQL databases</li>
+                    <li>Familiarity with cloud platforms (AWS, Azure, or GCP)</li>
+                    <li>Understanding of CI/CD pipelines and DevOps practices</li>
+                    <li>Excellent problem-solving, communication, and teamwork skills</li>
+                    <li>BSc/MSc in Computer Science or relevant field (or equivalent practical experience)</li>
+                </ul>
+
+                <h4 class="text-lg font-semibold mb-2">Benefits</h4>
+                <ul class="list-disc pl-5 mb-6 space-y-1">
+                    <li>Competitive salary and equity options</li>
+                    <li>Comprehensive health, dental, and vision insurance</li>
+                    <li>Flexible work arrangements with remote options</li>
+                    <li>Generous PTO policy and paid holidays</li>
+                    <li>401(k) matching program</li>
+                    <li>Professional development budget</li>
+                    <li>Home office stipend</li>
+                    <li>Wellness benefits and mental health resources</li>
+                </ul>
+
+                <div class="border-t border-gray-200 pt-6 mt-6">
+                    <h4 class="text-lg font-semibold mb-4">Apply for this position</h4>
+                    <form id="jobApplicationForm">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First
+                                    Name</label>
+                                <input type="text" id="firstName" name="firstName"
+                                    class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last
+                                    Name</label>
+                                <input type="text" id="lastName" name="lastName"
+                                    class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                            <input type="tel" id="phone" name="phone"
+                                class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="resume" class="block text-sm font-medium text-gray-700 mb-1">Resume/CV</label>
+                            <div class="flex items-center">
+                                <input type="file" id="resume" name="resume" class="hidden">
+                                <label for="resume"
+                                    class="cursor-pointer bg-white py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                    Upload File
+                                </label>
+                                <span id="filename" class="ml-3 text-sm text-gray-500">No file selected</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-1">PDF or Word document (Max 5MB)</p>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="coverLetter" class="block text-sm font-medium text-gray-700 mb-1">Cover Letter
+                                (Optional)</label>
+                            <textarea id="coverLetter" name="coverLetter" rows="4"
+                                class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                                placeholder="Tell us why you're a good fit for this position..."></textarea>
+                        </div>
+
+                        <div class="mb-6">
+                            <div class="flex items-start">
+                                <div class="flex items-center h-5">
+                                    <input id="privacy" name="privacy" type="checkbox"
+                                        class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                </div>
+                                <div class="ml-3 text-sm">
+                                    <label for="privacy" class="font-medium text-gray-700">I agree to the <a href="#"
+                                            class="text-blue-600 hover:underline">privacy policy</a> and consent to
+                                        processing my personal data for recruitment purposes.</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex justify-end space-x-3">
+                            <button type="button" onclick="closeJobModal()"
+                                class="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                                Cancel
+                            </button>
+                            <button type="submit"
+                                class="rounded-md border border-transparent bg-blue-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                                Submit Application
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Function to open the job modal
+        function openJobModal() {
+            document.getElementById('jobModal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+
+        // Function to close the job modal
+        function closeJobModal() {
+            document.getElementById('jobModal').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+
+        // Function to handle file selection
+        document.addEventListener('DOMContentLoaded', function () {
+            if (document.getElementById('resume')) {
+                document.getElementById('resume').addEventListener('change', function () {
+                    const filename = this.files[0] ? this.files[0].name : 'No file selected';
+                    document.getElementById('filename').textContent = filename;
+                });
+            }
+
+            // Form submission handler
+            if (document.getElementById('jobApplicationForm')) {
+                document.getElementById('jobApplicationForm').addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // Validate form
+                    const requiredFields = ['firstName', 'lastName', 'email', 'phone', 'resume', 'privacy'];
+                    let isValid = true;
+
+                    requiredFields.forEach(field => {
+                        const element = document.getElementById(field);
+
+                        if (field === 'resume') {
+                            if (!element.files[0]) {
+                                isValid = false;
+                                element.parentElement.classList.add('border', 'border-red-500', 'rounded-md');
+                            } else {
+                                element.parentElement.classList.remove('border', 'border-red-500', 'rounded-md');
+                            }
+                        } else if (field === 'privacy') {
+                            if (!element.checked) {
+                                isValid = false;
+                                element.parentElement.parentElement.classList.add('text-red-600');
+                            } else {
+                                element.parentElement.parentElement.classList.remove('text-red-600');
+                            }
+                        } else {
+                            if (!element.value.trim()) {
+                                isValid = false;
+                                element.classList.add('border-red-500');
+                            } else {
+                                element.classList.remove('border-red-500');
+                            }
+                        }
+                    });
+
+                    if (isValid) {
+                        // Here you would typically send the form data to your server
+                        // For this example, we'll just show a success message
+                        alert('Application submitted successfully!');
+                        closeJobModal();
+                    } else {
+                        alert('Please fill in all required fields');
+                    }
+                });
+            }
+        });
+
+        // Sample implementation for job listings page
+        document.addEventListener('DOMContentLoaded', function () {
+            // Example: dynamically create job cards from data
+            const jobListings = [
+                {
+                    company: "TechCorp Inc.",
+                    initials: "TC",
+                    title: "Senior Full Stack Developer",
+                    location: "New York, NY (Remote Available)",
+                    description: "We're looking for an experienced Full Stack Developer to join our growing engineering team...",
+                    jobType: "Full-time",
+                    salary: "$120k - $150k",
+                    workType: "Remote"
+                },
+                {
+                    company: "DevSolutions",
+                    initials: "DS",
+                    title: "Frontend Engineer",
+                    location: "San Francisco, CA",
+                    description: "Join our team to build beautiful, responsive web applications with modern frameworks...",
+                    jobType: "Full-time",
+                    salary: "$110k - $140k",
+                    workType: "Hybrid"
+                }
+            ];
+
+            // Function to populate job grid on page load
+            function populateJobListings() {
+                const jobGridContainer = document.getElementById('jobGridContainer');
+                if (!jobGridContainer) return;
+
+                jobListings.forEach(job => {
+                    const jobCard = document.createElement('div');
+                    jobCard.className = 'job-card bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 cursor-pointer';
+                    jobCard.innerHTML = `
+                    <div class="flex items-center mb-4">
+                        <div class="bg-gray-200 rounded-md h-12 w-12 flex items-center justify-center mr-4">
+                            <span class="font-bold text-blue-600">${job.initials}</span>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-gray-900">${job.company}</h4>
+                            <p class="text-sm text-gray-600">${job.location}</p>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">${job.title}</h3>
+                    <p class="text-gray-600 mb-4 line-clamp-2">${job.description}</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            ${job.jobType}
+                        </span>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            ${job.salary}
+                        </span>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800">
+                            ${job.workType}
+                        </span>
+                    </div>
+                `;
+
+                    // Add click event to open modal with this job's details
+                    jobCard.addEventListener('click', function () {
+                        // Set modal content based on job details
+                        document.getElementById('modalJobTitle').textContent = job.title;
+                        document.getElementById('modalCompanyName').textContent = job.company;
+                        document.getElementById('modalCompanyInitials').textContent = job.initials;
+                        document.getElementById('modalJobLocation').textContent = job.location;
+                        document.getElementById('modalJobType').textContent = job.jobType;
+                        document.getElementById('modalSalary').textContent = job.salary;
+                        document.getElementById('modalWorkType').textContent = job.workType;
+
+                        // Open the modal
+                        openJobModal();
+                    });
+
+                    jobGridContainer.appendChild(jobCard);
+                });
+            }
+
+            // Call the function to populate job listings
+            populateJobListings();
+        });
+    </script>

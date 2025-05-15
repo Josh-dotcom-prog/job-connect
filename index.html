@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Connect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .hero-section {
+            background-color: rgba(0, 0, 0, 0.69);
+            position: relative;
+        }
+
+        .hero-section::before {
+            content: "";
+            background-image: url('./Landing Page.png');
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .yellow-text {
+            color: #ffc107;
+        }
+
+        .blue-btn {
+            background-color: #167096;
+        }
+
+        .yellow-btn {
+            background-color: #ffc107;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero-section min-h-screen flex flex-col items-center justify-center text-white p-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-bold mb-8">
+                    <span class="text-white">JOB </span>
+                    <span class="yellow-text">CONNECT</span>
+                </h1>
+
+                <h2 class="text-4xl font-light mb-10 italic">
+                    " Bridge From Campus to Career"
+                </h2>
+
+                <div class="mb-20">
+                    <h3 class="text-3xl yellow-text font-medium">
+                        Start Your Journey
+                    </h3>
+                </div>
+
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 mb-16">
+                    <a href="jobseeker-login-signup.html"
+                        class="blue-btn text-white font-bold py-4 px-12 rounded-full text-xl transition duration-300 hover:opacity-90">
+                        JOB SEEKER
+                    </a>
+                    <a href="employer-login-signup.html"
+                        class="yellow-btn text-white font-bold py-4 px-12 rounded-full text-xl transition duration-300 hover:opacity-90">
+                        EMPLOYER
+                    </a>
+                </div>
+
+                <div class="text-center text-lg">
+                    <span class="text-white">Already have an account? </span>
+                    <a href="" class="yellow-text font-semibold hover:underline">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Profile | Employer Dashboard | CareerConnect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <div class="min-h-full">
+        <nav class="bg-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex">
+                        <div class="flex-shrink-0 flex items-center">
+                            <span class="text-2xl font-bold text-indigo-600">CareerConnect</span>
+                        </div>
+                        <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+                            <a href="#"
+                                class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                                aria-current="page">
+                                Dashboard
+                            </a>
+                            <a href="job-postings.html"
+                                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Job Postings
+                            </a>
+                            <a href="applications.html"
+                                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Applications
+                            </a>
+                            <a href="company-profile.html"
+                                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Company Profile
+                            </a>
+                            <a href="messages.html"
+                                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Messages
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                        <button type="button"
+                            class="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            id="notification-button">
+                            <span class="sr-only">View notifications</span>
+                            <i class="fas fa-bell"></i>
+                        </button>
+
+                        <!-- Profile dropdown -->
+                        <div class="ml-3 relative">
+                            <div>
+                                <button type="button"
+                                    class="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                    id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                    <span class="sr-only">Open user menu</span>
+                                    <img class="h-8 w-8 rounded-full"
+                                        src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                        alt="">
+                                </button>
+                            </div>
+
+                            <!-- Dropdown menu, show/hide based on menu state -->
+                            <div class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                id="user-menu-dropdown" role="menu" aria-orientation="vertical"
+                                aria-labelledby="user-menu-button" tabindex="-1">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem" tabindex="-1">Your Profile</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem" tabindex="-1">Settings</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem" tabindex="-1">Sign out</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="-mr-2 flex items-center sm:hidden">
+                        <!-- Mobile menu button -->
+                        <button type="button"
+                            class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            id="mobile-menu-button">
+                            <span class="sr-only">Open main menu</span>
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu state -->
+            <div class="hidden sm:hidden" id="mobile-menu">
+                <div class="pt-2 pb-3 space-y-1">
+                    <a href="employer-dashboard.html"
+                        class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Dashboard</a>
+                    <a href="employer-job-postings.html"
+                        class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Job
+                        Postings</a>
+                    <a href="employer-applications.html"
+                        class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Applications</a>
+                    <a href="employer-company-profile.html"
+                        class="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Company
+                        Profile</a>
+                    <a href="employer-messages.html"
+                        class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Messages</a>
+                </div>
+                <div class="pt-4 pb-3 border-t border-gray-200">
+                    <div class="flex items-center px-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full"
+                                src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                alt="">
+                        </div>
+                        <div class="ml-3">
+                            <div class="text-base font-medium text-gray-800">TechCorp Inc.</div>
+                            <div class="text-sm font-medium text-gray-500">hr@techcorp.com</div>
+                        </div>
+                    </div>
+                    <div class="mt-3 space-y-1">
+                        <a href="#"
+                            class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Your
+                            Profile</a>
+                        <a href="#"
+                            class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Settings</a>
+                        <a href="#"
+                            class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Sign
+                            out</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="py-10">
+            <header>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="md:flex md:items-center md:justify-between">
+                        <div class="flex-1 min-w-0">
+                            <h1 class="text-2xl font-bold leading-tight text-gray-900">Company Profile</h1>
+                            <p class="mt-1 text-sm text-gray-600">Manage your company information and branding</p>
+                        </div>
+                        <div class="mt-4 flex md:mt-0 md:ml-4">
+                            <button type="button" id="preview-profile-btn"
+                                class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <i class="fas fa-eye mr-2"></i> Preview
+                            </button>
+                            <button type="button" id="save-profile-btn"
+                                class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <i class="fas fa-save mr-2"></i> Save Changes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <!-- Profile Tabs -->
+                    <div class="mb-6">
+                        <div class="sm:hidden">
+                            <label for="tabs" class="sr-only">Select a tab</label>
+                            <select id="tabs" name="tabs"
+                                class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                                <option value="basic-info">Basic Information</option>
+                                <option value="branding">Branding</option>
+                                <option value="team">Team Members</option>
+                                <option value="social">Social Media</option>
+                            </select>
+                        </div>
+                        <div class="hidden sm:block">
+                            <div class="border-b border-gray-200">
+                                <nav class="-mb-px flex space-x-8" aria-label="Tabs">
+                                    <button
+                                        class="tab-button border-indigo-500 text-indigo-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+                                        data-tab="basic-info-tab">
+                                        Basic Information
+                                    </button>
+                                    <button
+                                        class="tab-button border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+                                        data-tab="branding-tab">
+                                        Branding
+                                    </button>
+                                    <button
+                                        class="tab-button border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+                                        data-tab="team-tab">
+                                        Team Members
+                                    </button>
+                                    <button
+                                        class="tab-button border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+                                        data-tab="social-tab">
+                                        Social Media
+                                    </button>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Basic Information Tab -->
+                    <div class="tab-content bg-white shadow rounded-lg p-6 mb-6" id="basic-info-tab">
+                        <form id="basic-info-form">
+                            <div class="grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+                                <div class="sm:col-span-3">
+                                    <label for="company-name" class="block text-sm font-medium text-gray-700">Company
+                                        Name</label>
+                                    <div class="mt-1">
+                                        <input type="text" name="company-name" id="company-name" value="TechCorp Inc."
+                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                    </div>
+                                </div>
+
+                                <div class="sm:col-span-3">
+                                    <label for="industry"
+                                        class="block text-sm font-medium text-gray-700">Industry</label>
+                                    <div class="mt-1">
+                                        <select id="industry" name="industry"
+                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                            <option value="technology" selected>Technology</option>
+                                            <option value="finance">Finance</option>
+                                            <option value="healthcare">Healthcare</option>
+                                            <option value="education">Education</option>
+                                            <option value="retail">Retail</option>
+                                            <option value="manufacturing">Manufacturing</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="sm:col-span-6">
+                                    <label for="company-description"
+                                        class="block text-sm font-medium text-gray-700">Company Description</label>
+                                    <div class="mt-1">
+                                        <textarea id="company-description" name="company-description" rows="4"
+                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">TechCorp Inc. is a leading technology company specializing in innovative software solutions for businesses of all sizes. Founded in 2010, we have grown to become a trusted partner for over 500 companies worldwide.</textarea>
+                                    </div>
+                                    <p class="mt-2 text-sm text-gray-500">Brief description of your company that will
+                                        appear on your profile and job listings.</p>
+                                </div>
+
+                                <div class="sm:col-span-3">
+                                    <label for="company-size" class="block text-sm font-medium text-gray-700">Company
+                                        Size</label>
+                                    <div class="mt-1">
+                                        <select id="company-size" name="company-size"
+                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                            <option value="1-10">1-10 employees</option>
+                                            <option value="11-50">11-50 employees</option>
+                                            <option value="51-200" selected>51-200 employees</option>
+                                            <option value="201-500">201-500 employees</option>
+                                            <option value="501-1000">501-1000 employees</option>
+                                            <option value="1001+">1001+ employees</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="sm:col-span-3">
+                                    <label for="founded-year" class="block text-sm font-medium text-gray-700">Founded
+                                        Year</label>
+                                    <div class="mt-1">
+                                        <input type="number" name="founded-year" id="founded-year" value="2010"
+                                            min="1900" max="2023"
+                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                    </div>
+                                </div>
+
+                                <div class="sm:col-span-6">
+                                    <label for="headquarters"
+                                        class="block text-sm font-medium text-gray-700">Headquarters</label>
+                                    <div class="mt-1">
+                                        <input type="text" name="headquarters" id="headquarters"
+                                            value="San Francisco, CA"
+                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                    </div>
+                                </div>
+
+                                <div class="sm:col-span-6">
+                                    <label for="website" class="block text-sm font-medium text-gray-700">Website</label>
+                                    <div class="mt-1">
+                                        <input type="url" name="website" id="website" value="https://www.techcorp.com"
+                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                    </div>
+                                </div>
+
+                                <div class="sm:col-span-3">
+                                    <label for="contact-email" class="block text-sm font-medium text-gray-700">Contact
+                                        Email</label>
+                                    <div class="mt-1">
+                                        <input type="email" name="contact-email" id="contact-email"
+                                            value="hr@techcorp.com"
+                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                    </div>
+                                </div>
+
+                                <div class="sm:col-span-3">
+                                    <label for="contact-phone" class="block text-sm font-medium text-gray-700">Contact
+                                        Phone</label>
+                                    <div class="mt-1">
+                                        <input type="tel" name="contact-phone" id="contact-phone" value="(555) 123-4567"
+                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Branding Tab -->
+                    <div class="tab-content hidden bg-white shadow rounded-lg p-6 mb-6" id="branding-tab">
+                        <form id="branding-form">
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Company Logo</label>
+                                    <div class="mt-1 flex items-center">
+                                        <span class="h-12 w-12 rounded-full overflow-hidden bg-gray-100">
+                                            <img src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                                                alt="Company logo" class="h-full w-full object-cover">
+                                        </span>
+                                        <button type="button"
+                                            class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            Change
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700">Cover Image</label>
+                                    <div
+                                        class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                        <div class="space-y-1 text-center">
+                                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                                                alt="Company cover" class="mx-auto h-40 w-full object-cover rounded-md">
+                                            <div class="flex text-sm text-gray-600 mt-2 justify-center">
+                                                <label for="cover-upload"
+                                                    class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                                    <span>Upload a new image</span>
+                                                    <input id="cover-upload" name="cover-upload" type="file"
+                                                        class="sr-only">
+                                                </label>
+                                            </div>
+                                            <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="company-colors" class="block text-sm font-medium text-gray-700">Company
+                                        Colors</label>
+                                    <div class="mt-1 grid grid-cols-2 gap-4">
+                                        <div>
+                                            <label for="primary-color"
+                                                class="block text-xs font-medium text-gray-500">Primary Color</label>
+                                            <div class="mt-1 flex items-center">
+                                                <input type="color" id="primary-color" name="primary-color"
+                                                    value="#4F46E5"
+                                                    class="h-8 w-8 rounded-md border border-gray-300 cursor-pointer">
+                                                <input type="text" value="#4F46E5"
+                                                    class="ml-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <label for="secondary-color"
+                                                class="block text-xs font-medium text-gray-500">Secondary Color</label>
+                                            <div class="mt-1 flex items-center">
+                                                <input type="color" id="secondary-color" name="secondary-color"
+                                                    value="#10B981"
+                                                    class="h-8 w-8 rounded-md border border-gray-300 cursor-pointer">
+                                                <input type="text" value="#10B981"
+                                                    class="ml-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="company-slogan" class="block text-sm font-medium text-gray-700">Company
+                                        Slogan</label>
+                                    <div class="mt-1">
+                                        <input type="text" name="company-slogan" id="company-slogan"
+                                            value="Innovating for a better tomorrow"
+                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                    </div>
+                                    <p class="mt-2 text-sm text-gray-500">A short tagline that represents your company's
+                                        mission.</p>
+                                </div>
+
+                                <div>
+                                    <label for="company-values" class="block text-sm font-medium text-gray-700">Company
+                                        Values</label>
+                                    <div class="mt-1">
+                                        <textarea id="company-values" name="company-values" rows="4"
+                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">Innovation, Integrity, Collaboration, Excellence, Customer Focus</textarea>
+                                    </div>
+                                    <p class="mt-2 text-sm text-gray-500">Core values that define your company culture.
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Team Members Tab -->
+                    <div class="tab-content hidden bg-white shadow rounded-lg p-6 mb-6" id="team-tab">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-lg font-medium text-gray-900">Team Members</h2>
+                            <button type="button" id="add-team-member-btn"
+                                class="inline-flex items-center px-3 py-1.5 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <i class="fas fa-plus mr-1.5"></i> Add Member
+                            </button>
+                        </div>
+
+                        <div class="overflow-hidden">
+                            <ul class="divide-y divide-gray-200" id="team-members-list">
+                                <li class="py-4 flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <img class="h-10 w-10 rounded-full"
+                                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                            alt="">
+                                        <div class="ml-3">
+                                            <p class="text-sm font-medium text-gray-900">Sarah Johnson</p>
+                                            <p class="text-sm text-gray-500">CEO & Founder</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <button type="button"
+                                            class="edit-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            Edit
+                                        </button>
+                                        <button type="button"
+                                            class="delete-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-transparent shadow-sm text-xs font-medium rounded text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                            Delete
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="py-4 flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <img class="h-10 w-10 rounded-full"
+                                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                            alt="">
+                                        <div class="ml-3">
+                                            <p class="text-sm font-medium text-gray-900">Michael Chen</p>
+                                            <p class="text-sm text-gray-500">CTO</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <button type="button"
+                                            class="edit-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            Edit
+                                        </button>
+                                        <button type="button"
+                                            class="delete-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-transparent shadow-sm text-xs font-medium rounded text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                            Delete
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="py-4 flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <img class="h-10 w-10 rounded-full"
+                                            src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                            alt="">
+                                        <div class="ml-3">
+                                            <p class="text-sm font-medium text-gray-900">Robert Taylor</p>
+                                            <p class="text-sm text-gray-500">VP of Engineering</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <button type="button"
+                                            class="edit-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            Edit
+                                        </button>
+                                        <button type="button"
+                                            class="delete-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-transparent shadow-sm text-xs font-medium rounded text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                            Delete
+                                        </button>
+                                    </div>
+                                </li>
+                                <li class="py-4 flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <img class="h-10 w-10 rounded-full"
+                                            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                            alt="">
+                                        <div class="ml-3">
+                                            <p class="text-sm font-medium text-gray-900">Jessica Martinez</p>
+                                            <p class="text-sm text-gray-500">Head of HR</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex space-x-2">
+                                        <button type="button"
+                                            class="edit-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            Edit
+                                        </button>
+                                        <button type="button"
+                                            class="delete-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-transparent shadow-sm text-xs font-medium rounded text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                            Delete
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Social Media Tab -->
+                    <div class="tab-content hidden bg-white shadow rounded-lg p-6 mb-6" id="social-tab">
+                        <form id="social-media-form">
+                            <div class="space-y-6">
+                                <div class="flex items-center">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-md bg-blue-500 text-white">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <label for="linkedin"
+                                            class="block text-sm font-medium text-gray-700">LinkedIn</label>
+                                        <input type="url" name="linkedin" id="linkedin"
+                                            value="https://www.linkedin.com/company/techcorp"
+                                            class="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-md bg-blue-400 text-white">
+                                        <i class="fab fa-twitter"></i>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <label for="twitter"
+                                            class="block text-sm font-medium text-gray-700">Twitter</label>
+                                        <input type="url" name="twitter" id="twitter"
+                                            value="https://twitter.com/techcorp"
+                                            class="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-md bg-pink-600 text-white">
+                                        <i class="fab fa-instagram"></i>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <label for="instagram"
+                                            class="block text-sm font-medium text-gray-700">Instagram</label>
+                                        <input type="url" name="instagram" id="instagram"
+                                            value="https://www.instagram.com/techcorp"
+                                            class="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-md bg-blue-600 text-white">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <label for="facebook"
+                                            class="block text-sm font-medium text-gray-700">Facebook</label>
+                                        <input type="url" name="facebook" id="facebook"
+                                            value="https://www.facebook.com/techcorp"
+                                            class="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-md bg-black text-white">
+                                        <i class="fab fa-github"></i>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <label for="github"
+                                            class="block text-sm font-medium text-gray-700">GitHub</label>
+                                        <input type="url" name="github" id="github" value="https://github.com/techcorp"
+                                            class="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center">
+                                    <div
+                                        class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-md bg-red-600 text-white">
+                                        <i class="fab fa-youtube"></i>
+                                    </div>
+                                    <div class="ml-4 flex-1">
+                                        <label for="youtube"
+                                            class="block text-sm font-medium text-gray-700">YouTube</label>
+                                        <input type="url" name="youtube" id="youtube"
+                                            value="https://www.youtube.com/techcorp"
+                                            class="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Team Member Modal -->
+    <div class="fixed z-10 inset-0 overflow-y-auto hidden" id="team-member-modal">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                                Add Team Member
+                            </h3>
+                            <form class="mt-4" id="team-member-form">
+                                <div class="space-y-4">
+                                    <div>
+                                        <label for="member-name"
+                                            class="block text-sm font-medium text-gray-700">Name</label>
+                                        <input type="text" name="member-name" id="member-name"
+                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border"
+                                            required>
+                                    </div>
+                                    <div>
+                                        <label for="member-title" class="block text-sm font-medium text-gray-700">Job
+                                            Title</label>
+                                        <input type="text" name="member-title" id="member-title"
+                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border"
+                                            required>
+                                    </div>
+                                    <div>
+                                        <label for="member-bio"
+                                            class="block text-sm font-medium text-gray-700">Bio</label>
+                                        <textarea id="member-bio" name="member-bio" rows="3"
+                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border"></textarea>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700">Photo</label>
+                                        <div class="mt-1 flex items-center">
+                                            <span class="h-12 w-12 rounded-full overflow-hidden bg-gray-100">
+                                                <svg class="h-full w-full text-gray-300" fill="currentColor"
+                                                    viewBox="0 0 24 24">
+                                                    <path
+                                                        d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                                                </svg>
+                                            </span>
+                                            <button type="button"
+                                                class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                Upload
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label for="member-linkedin"
+                                            class="block text-sm font-medium text-gray-700">LinkedIn URL</label>
+                                        <input type="url" name="member-linkedin" id="member-linkedin"
+                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" id="save-team-member"
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        Save
+                    </button>
+                    <button type="button" id="close-team-member-modal"
+                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Notification -->
+    <div id="success-notification"
+        class="fixed inset-0 flex items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:items-start sm:justify-end hidden">
+        <div
+            class="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
+            <div class="p-4">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-check-circle text-green-400 text-lg"></i>
+                    </div>
+                    <div class="ml-3 w-0 flex-1 pt-0.5">
+                        <p class="text-sm font-medium text-gray-900" id="notification-title">Success!</p>
+                        <p class="mt-1 text-sm text-gray-500" id="notification-message">Operation completed
+                            successfully.</p>
+                    </div>
+                    <div class="ml-4 flex-shrink-0 flex">
+                        <button id="close-notification"
+                            class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <span class="sr-only">Close</span>
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // User menu dropdown
+            const userMenuButton = document.getElementById('user-menu-button');
+            const userMenuDropdown = document.getElementById('user-menu-dropdown');
+
+            userMenuButton.addEventListener('click', function () {
+                userMenuDropdown.classList.toggle('hidden');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!userMenuButton.contains(event.target) && !userMenuDropdown.contains(event.target)) {
+                    userMenuDropdown.classList.add('hidden');
+                }
+            });
+
+            // Tab switching
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const tabsSelect = document.getElementById('tabs');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const tabId = this.getAttribute('data-tab');
+
+                    // Update active tab button
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('border-indigo-500', 'text-indigo-600');
+                        btn.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                    });
+                    this.classList.add('border-indigo-500', 'text-indigo-600');
+                    this.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+
+                    // Show active tab content
+                    tabContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    document.getElementById(tabId).classList.remove('hidden');
+
+                    // Update mobile select
+                    if (tabsSelect) {
+                        if (tabId === 'basic-info-tab') tabsSelect.value = 'basic-info';
+                        else if (tabId === 'branding-tab') tabsSelect.value = 'branding';
+                        else if (tabId === 'team-tab') tabsSelect.value = 'team';
+                        else if (tabId === 'social-tab') tabsSelect.value = 'social';
+                    }
+                });
+            });
+
+            // Mobile tabs select
+            if (tabsSelect) {
+                tabsSelect.addEventListener('change', function () {
+                    const value = this.value;
+                    let tabId;
+
+                    if (value === 'basic-info') tabId = 'basic-info-tab';
+                    else if (value === 'branding') tabId = 'branding-tab';
+                    else if (value === 'team') tabId = 'team-tab';
+                    else if (value === 'social') tabId = 'social-tab';
+
+                    // Show active tab content
+                    tabContents.forEach(content => {
+                        content.classList.add('hidden');
+                    });
+                    document.getElementById(tabId).classList.remove('hidden');
+
+                    // Update desktop tabs
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('border-indigo-500', 'text-indigo-600');
+                        btn.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+
+                        if (btn.getAttribute('data-tab') === tabId) {
+                            btn.classList.add('border-indigo-500', 'text-indigo-600');
+                            btn.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
+                        }
+                    });
+                });
+            }
+
+            // Save profile
+            const saveProfileBtn = document.getElementById('save-profile-btn');
+            const successNotification = document.getElementById('success-notification');
+            const notificationTitle = document.getElementById('notification-title');
+            const notificationMessage = document.getElementById('notification-message');
+            const closeNotificationButton = document.getElementById('close-notification');
+
+            saveProfileBtn.addEventListener('click', function () {
+                // Save profile (in a real app, this would be an AJAX request)
+
+                // Show success notification
+                notificationTitle.textContent = 'Profile Saved!';
+                notificationMessage.textContent = 'Your company profile has been updated successfully.';
+                successNotification.classList.remove('hidden');
+
+                // Auto-hide notification after 5 seconds
+                setTimeout(() => {
+                    successNotification.classList.add('hidden');
+                }, 5000);
+            });
+
+            closeNotificationButton.addEventListener('click', function () {
+                successNotification.classList.add('hidden');
+            });
+
+            // Preview profile
+            const previewProfileBtn = document.getElementById('preview-profile-btn');
+
+            previewProfileBtn.addEventListener('click', function () {
+                alert('Opening company profile preview...');
+            });
+
+            // Team member modal
+            const teamMemberModal = document.getElementById('team-member-modal');
+            const addTeamMemberBtn = document.getElementById('add-team-member-btn');
+            const closeTeamMemberModalBtn = document.getElementById('close-team-member-modal');
+            const saveTeamMemberBtn = document.getElementById('save-team-member');
+            const editTeamMemberBtns = document.querySelectorAll('.edit-team-member-btn');
+            const deleteTeamMemberBtns = document.querySelectorAll('.delete-team-member-btn');
+
+            addTeamMemberBtn.addEventListener('click', function () {
+                // Reset form
+                document.getElementById('team-member-form').reset();
+                document.getElementById('modal-title').textContent = 'Add Team Member';
+
+                // Show modal
+                teamMemberModal.classList.remove('hidden');
+            });
+
+            closeTeamMemberModalBtn.addEventListener('click', function () {
+                teamMemberModal.classList.add('hidden');
+            });
+
+            saveTeamMemberBtn.addEventListener('click', function () {
+                const form = document.getElementById('team-member-form');
+
+                // Simple form validation
+                const requiredFields = form.querySelectorAll('[required]');
+                let isValid = true;
+
+                requiredFields.forEach(field => {
+                    if (!field.value) {
+                        isValid = false;
+                        field.classList.add('border-red-500');
+                    } else {
+                        field.classList.remove('border-red-500');
+                    }
+                });
+
+                if (isValid) {
+                    // Save team member (in a real app, this would be an AJAX request)
+                    const name = document.getElementById('member-name').value;
+                    const title = document.getElementById('member-title').value;
+
+                    // Close modal
+                    teamMemberModal.classList.add('hidden');
+
+                    // Show success notification
+                    notificationTitle.textContent = 'Team Member Saved!';
+                    notificationMessage.textContent = `${name} has been added to your team.`;
+                    successNotification.classList.remove('hidden');
+
+                    // Auto-hide notification after 5 seconds
+                    setTimeout(() => {
+                        successNotification.classList.add('hidden');
+                    }, 5000);
+
+                    // In a real app, we would add the new team member to the list
+                    // For demo purposes, we'll just reset the form
+                    form.reset();
+
+                    // Add the new team member to the list
+                    const teamMembersList = document.getElementById('team-members-list');
+                    const newTeamMember = document.createElement('li');
+                    newTeamMember.className = 'py-4 flex items-center justify-between';
+                    newTeamMember.innerHTML = `
+                        <div class="flex items-center">
+                            <span class="h-10 w-10 rounded-full overflow-hidden bg-gray-100 flex items-center justify-center">
+                                <svg class="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                                </svg>
+                            </span>
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">${name}</p>
+                                <p class="text-sm text-gray-500">${title}</p>
+                            </div>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button type="button" class="edit-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                Edit
+                            </button>
+                            <button type="button" class="delete-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-transparent shadow-sm text-xs font-medium rounded text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
+                                Delete
+                            </button>
+                        </div>
+                    `;
+                    teamMembersList.prepend(newTeamMember);
+
+                    // Add event listeners to the new buttons
+                    const newEditBtn = newTeamMember.querySelector('.edit-team-member-btn');
+                    const newDeleteBtn = newTeamMember.querySelector('.delete-team-member-btn');
+
+                    newEditBtn.addEventListener('click', handleEditTeamMember);
+                    newDeleteBtn.addEventListener('click', handleDeleteTeamMember);
+                }
+            });
+
+            // Function to handle edit team member
+            function handleEditTeamMember() {
+                const listItem = this.closest('li');
+                const name = listItem.querySelector('.text-gray-900').textContent;
+                const title = listItem.querySelector('.text-gray-500').textContent;
+
+                // Set form values
+                document.getElementById('member-name').value = name;
+                document.getElementById('member-title').value = title;
+
+                // Set modal title
+                document.getElementById('modal-title').textContent = 'Edit Team Member';
+
+                // Show modal
+                teamMemberModal.classList.remove('hidden');
+
+                // Store reference to the edited item
+                saveTeamMemberBtn.setAttribute('data-edit-item', listItem.getAttribute('data-id') || '');
+            }
+
+            // Function to handle delete team member
+            function handleDeleteTeamMember() {
+                const listItem = this.closest('li');
+                const name = listItem.querySelector('.text-gray-900').textContent;
+
+                if (confirm(`Are you sure you want to remove ${name} from your team?`)) {
+                    // Delete team member (in a real app, this would be an AJAX request)
+                    listItem.remove();
+
+                    // Show success notification
+                    notificationTitle.textContent = 'Team Member Removed';
+                    notificationMessage.textContent = `${name} has been removed from your team.`;
+                    successNotification.classList.remove('hidden');
+
+                    // Auto-hide notification after 5 seconds
+                    setTimeout(() => {
+                        successNotification.classList.add('hidden');
+                    }, 5000);
+                }
+            }
+
+            // Add event listeners to edit and delete buttons
+            editTeamMemberBtns.forEach(button => {
+                button.addEventListener('click', handleEditTeamMember);
+            });
+
+            deleteTeamMemberBtns.forEach(button => {
+                button.addEventListener('click', handleDeleteTeamMember);
+            });
+
+            // Color picker functionality
+            const primaryColorPicker = document.getElementById('primary-color');
+            const secondaryColorPicker = document.getElementById('secondary-color');
+            const primaryColorText = primaryColorPicker.nextElementSibling;
+            const secondaryColorText = secondaryColorPicker.nextElementSibling;
+
+            primaryColorPicker.addEventListener('input', function () {
+                primaryColorText.value = this.value.toUpperCase();
+            });
+
+            secondaryColorPicker.addEventListener('input', function () {
+                secondaryColorText.value = this.value.toUpperCase();
+            });
+
+            primaryColorText.addEventListener('input', function () {
+                if (this.value.startsWith('#') && (this.value.length === 4 || this.value.length === 7)) {
+                    primaryColorPicker.value = this.value;
+                }
+            });
+
+            secondaryColorText.addEventListener('input', function () {
+                if (this.value.startsWith('#') && (this.value.length === 4 || this.value.length === 7)) {
+                    secondaryColorPicker.value = this.value;
+                }
+            });
+
+            // File upload functionality
+            const coverUpload = document.getElementById('cover-upload');
+
+            coverUpload.addEventListener('change', function () {
+                if (this.files && this.files[0]) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        const coverImage = coverUpload.closest('div').querySelector('img');
+                        coverImage.src = e.target.result;
+                    };
+
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+
+            // Notification button functionality
+            const notificationButton = document.getElementById('notification-button');
+
+            notificationButton.addEventListener('click', function () {
+                alert('You have no new notifications');
+            });
+        });
+    </script>
+</body>
+
+</html>

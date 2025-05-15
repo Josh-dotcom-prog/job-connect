@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications | Employer Dashboard | CareerConnect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <div class="min-h-full">
+        <nav class="bg-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex">
+                        <div class="flex-shrink-0 flex items-center">
+                            <span class="text-2xl font-bold text-indigo-600">CareerConnect</span>
+                        </div>
+                        <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+                            <a href="employer-dashboard.html"
+                                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Dashboard
+                            </a>
+                            <a href="employer-job-postings.html"
+                                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Job Postings
+                            </a>
+                            <a href="employer-applications.html"
+                                class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                                aria-current="page">
+                                Applications
+                            </a>
+                            <a href="employer-company-profile.html"
+                                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Company Profile
+                            </a>
+                            <a href="employer-messages.html"
+                                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Messages
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                        <button type="button"
+                            class="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            id="notification-button">
+                            <span class="sr-only">View notifications</span>
+                            <i class="fas fa-bell"></i>
+                        </button>
+
+                        <!-- Profile dropdown -->
+                        <div class="ml-3 relative">
+                            <div>
+                                <button type="button"
+                                    class="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                    id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                                    <span class="sr-only">Open user menu</span>
+                                    <img class="h-8 w-8 rounded-full"
+                                        src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                        alt="">
+                                </button>
+                            </div>
+
+                            <!-- Dropdown menu, show/hide based on menu state -->
+                            <div class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                id="user-menu-dropdown" role="menu" aria-orientation="vertical"
+                                aria-labelledby="user-menu-button" tabindex="-1">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem" tabindex="-1">Your Profile</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem" tabindex="-1">Settings</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem" tabindex="-1">Sign out</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="-mr-2 flex items-center sm:hidden">
+                        <!-- Mobile menu button -->
+                        <button type="button"
+                            class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            id="mobile-menu-button">
+                            <span class="sr-only">Open main menu</span>
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu state -->
+            <div class="hidden sm:hidden" id="mobile-menu">
+                <div class="pt-2 pb-3 space-y-1">
+                    <a href="employer-dashboard.html"
+                        class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Dashboard</a>
+                    <a href="employer-job-postings.html"
+                        class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Job
+                        Postings</a>
+                    <a href="employer-applications.html"
+                        class="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Applications</a>
+                    <a href="employer-company-profile.html"
+                        class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Company
+                        Profile</a>
+                    <a href="employer-messages.html"
+                        class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Messages</a>
+                </div>
+                <div class="pt-4 pb-3 border-t border-gray-200">
+                    <div class="flex items-center px-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full"
+                                src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                alt="">
+                        </div>
+                        <div class="ml-3">
+                            <div class="text-base font-medium text-gray-800">TechCorp Inc.</div>
+                            <div class="text-sm font-medium text-gray-500">hr@techcorp.com</div>
+                        </div>
+                    </div>
+                    <div class="mt-3 space-y-1">
+                        <a href="#"
+                            class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Your
+                            Profile</a>
+                        <a href="#"
+                            class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Settings</a>
+                        <a href="#"
+                            class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Sign
+                            out</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="py-10">
+            <header>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="md:flex md:items-center md:justify-between">
+                        <div class="flex-1 min-w-0">
+                            <h1 class="text-2xl font-bold leading-tight text-gray-900">Applications</h1>
+                            <p class="mt-1 text-sm text-gray-600">Review and manage candidate applications</p>
+                        </div>
+                        <div class="mt-4 flex md:mt-0 md:ml-4">
+                            <button type="button" id="export-applications"
+                                class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                <i class="fas fa-file-export mr-2"></i> Export
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <!-- Filters and Search -->
+                    <div class="bg-white shadow rounded-lg p-6 mb-6">
+                        <div
+                            class="flex flex-col md:flex-row md:items-center md:justify-between space-y-3 md:space-y-0 md:space-x-4">
+                            <div class="flex-1 min-w-0">
+                                <div class="relative rounded-md shadow-sm">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fas fa-search text-gray-400"></i>
+                                    </div>
+                                    <input type="text" id="search-applications"
+                                        class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md py-2 border"
+                                        placeholder="Search applicants...">
+                                </div>
+                            </div>
+                            <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3">
+                                <select id="job-filter"
+                                    class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md border">
+                                    <option value="all">All Jobs</option>
+                                    <option value="frontend">Senior Frontend Developer</option>
+                                    <option value="ui-ux">UI/UX Designer</option>
+                                    <option value="data">Data Scientist</option>
+                                    <option value="devops">DevOps Engineer</option>
+                                </select>
+                                <select id="status-filter"
+                                    class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md border">
+                                    <option value="all">All Status</option>
+                                    <option value="new">New</option>
+                                    <option value="review">In Review</option>
+                                    <option value="interview">Interview</option>
+                                    <option value="offer">Offer</option>
+                                    <option value="hired">Hired</option>
+                                    <option value="rejected">Rejected</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Applications List -->
+                    <div class="bg-white shadow overflow-hidden sm:rounded-md">
+                        <ul class="divide-y divide-gray-200" id="application-listings">
+                            <li class="application-item" data-job="frontend" data-status="new">
+                                <div class="px-4 py-4 sm:px-6">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <img class="h-10 w-10 rounded-full"
+                                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                alt="">
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Michael Johnson</div>
+                                                <div class="text-sm text-gray-500">Applied for Senior Frontend Developer
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ml-2 flex-shrink-0 flex">
+                                            <span
+                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                New
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 sm:flex sm:justify-between">
+                                        <div class="sm:flex">
+                                            <div class="flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-graduation-cap mr-1.5 text-gray-400"></i>
+                                                Stanford University
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-briefcase mr-1.5 text-gray-400"></i>
+                                                5 years experience
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-calendar mr-1.5 text-gray-400"></i>
+                                                Applied Jan 20, 2023
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                                            <div class="flex space-x-2">
+                                                <button type="button"
+                                                    class="view-application-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                    View Profile
+                                                </button>
+                                                <button type="button"
+                                                    class="schedule-interview-btn inline-flex items-center px-2.5 py-1.5 border border-transparent shadow-sm text-xs font-medium rounded text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                    Schedule Interview
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="application-item" data-job="ui-ux" data-status="review">
+                                <div class="px-4 py-4 sm:px-6">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <img class="h-10 w-10 rounded-full"
+                                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                alt="">
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Sarah Williams</div>
+                                                <div class="text-sm text-gray-500">Applied for UI/UX Designer</div>
+                                            </div>
+                                        </div>
+                                        <div class="ml-2 flex-shrink-0 flex">
+                                            <span
+                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                                In Review
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 sm:flex sm:justify-between">
+                                        <div class="sm:flex">
+                                            <div class="flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-graduation-cap mr-1.5 text-gray-400"></i>
+                                                Rhode Island School of Design
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-briefcase mr-1.5 text-gray-400"></i>
+                                                3 years experience
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-calendar mr-1.5 text-gray-400"></i>
+                                                Applied Jan 18, 2023
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                                            <div class="flex space-x-2">
+                                                <button type="button"
+                                                    class="view-application-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                    View Profile
+                                                </button>
+                                                <button type="button"
+                                                    class="schedule-interview-btn inline-flex items-center px-2.5 py-1.5 border border-transparent shadow-sm text-xs font-medium rounded text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                    Schedule Interview
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="application-item" data-job="data" data-status="interview">
+                                <div class="px-4 py-4 sm:px-6">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <img class="h-10 w-10 rounded-full"
+                                                src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                alt="">
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">David Chen</div>
+                                                <div class="text-sm text-gray-500">Applied for Data Scientist</div>
+                                            </div>
+                                        </div>
+                                        <div class="ml-2 flex-shrink-0 flex">
+                                            <span
+                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                                                Interview
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 sm:flex sm:justify-between">
+                                        <div class="sm:flex">
+                                            <div class="flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-graduation-cap mr-1.5 text-gray-400"></i>
+                                                MIT
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-briefcase mr-1.5 text-gray-400"></i>
+                                                7 years experience
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-calendar mr-1.5 text-gray-400"></i>
+                                                Applied Jan 15, 2023
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                                            <div class="flex space-x-2">
+                                                <button type="button"
+                                                    class="view-application-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                    View Profile
+                                                </button>
+                                                <button type="button"
+                                                    class="send-offer-btn inline-flex items-center px-2.5 py-1.5 border border-transparent shadow-sm text-xs font-medium rounded text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                    Send Offer
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="application-item" data-job="devops" data-status="offer">
+                                <div class="px-4 py-4 sm:px-6">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <img class="h-10 w-10 rounded-full"
+                                                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                alt="">
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Robert Taylor</div>
+                                                <div class="text-sm text-gray-500">Applied for DevOps Engineer</div>
+                                            </div>
+                                        </div>
+                                        <div class="ml-2 flex-shrink-0 flex">
+                                            <span
+                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-purple-100 text-purple-800">
+                                                Offer Sent
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 sm:flex sm:justify-between">
+                                        <div class="sm:flex">
+                                            <div class="flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-graduation-cap mr-1.5 text-gray-400"></i>
+                                                University of Washington
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-briefcase mr-1.5 text-gray-400"></i>
+                                                6 years experience
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-calendar mr-1.5 text-gray-400"></i>
+                                                Applied Jan 10, 2023
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                                            <div class="flex space-x-2">
+                                                <button type="button"
+                                                    class="view-application-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                    View Profile
+                                                </button>
+                                                <button type="button"
+                                                    class="check-status-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                    Check Status
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="application-item" data-job="frontend" data-status="hired">
+                                <div class="px-4 py-4 sm:px-6">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <img class="h-10 w-10 rounded-full"
+                                                src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                alt="">
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Jessica Martinez</div>
+                                                <div class="text-sm text-gray-500">Applied for Senior Frontend Developer
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ml-2 flex-shrink-0 flex">
+                                            <span
+                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                Hired
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 sm:flex sm:justify-between">
+                                        <div class="sm:flex">
+                                            <div class="flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-graduation-cap mr-1.5 text-gray-400"></i>
+                                                UC Berkeley
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-briefcase mr-1.5 text-gray-400"></i>
+                                                8 years experience
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-calendar mr-1.5 text-gray-400"></i>
+                                                Applied Dec 15, 2022
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                                            <div class="flex space-x-2">
+                                                <button type="button"
+                                                    class="view-application-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                    View Profile
+                                                </button>
+                                                <button type="button"
+                                                    class="onboarding-btn inline-flex items-center px-2.5 py-1.5 border border-transparent shadow-sm text-xs font-medium rounded text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                    Onboarding
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="application-item" data-job="ui-ux" data-status="rejected">
+                                <div class="px-4 py-4 sm:px-6">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <img class="h-10 w-10 rounded-full"
+                                                src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                alt="">
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-gray-900">Thomas Wilson</div>
+                                                <div class="text-sm text-gray-500">Applied for UI/UX Designer</div>
+                                            </div>
+                                        </div>
+                                        <div class="ml-2 flex-shrink-0 flex">
+                                            <span
+                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                                Rejected
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 sm:flex sm:justify-between">
+                                        <div class="sm:flex">
+                                            <div class="flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-graduation-cap mr-1.5 text-gray-400"></i>
+                                                Parsons School of Design
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-briefcase mr-1.5 text-gray-400"></i>
+                                                2 years experience
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-calendar mr-1.5 text-gray-400"></i>
+                                                Applied Dec 10, 2022
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                                            <div class="flex space-x-2">
+                                                <button type="button"
+                                                    class="view-application-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                    View Profile
+                                                </button>
+                                                <button type="button"
+                                                    class="reconsider-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                    Reconsider
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div
+                        class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6 mt-4 rounded-md shadow">
+                        <div class="flex-1 flex justify-between sm:hidden">
+                            <a href="#"
+                                class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                Previous
+                            </a>
+                            <a href="#"
+                                class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                Next
+                            </a>
+                        </div>
+                        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                            <div>
+                                <p class="text-sm text-gray-700">
+                                    Showing <span class="font-medium">1</span> to <span class="font-medium">6</span> of
+                                    <span class="font-medium">24</span> results
+                                </p>
+                            </div>
+                            <div>
+                                <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
+                                    aria-label="Pagination">
+                                    <a href="#"
+                                        class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                        <span class="sr-only">Previous</span>
+                                        <i class="fas fa-chevron-left"></i>
+                                    </a>
+                                    <a href="#" aria-current="page"
+                                        class="z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                        1
+                                    </a>
+                                    <a href="#"
+                                        class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                        2
+                                    </a>
+                                    <a href="#"
+                                        class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                        3
+                                    </a>
+                                    <span
+                                        class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">
+                                        ...
+                                    </span>
+                                    <a href="#"
+                                        class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                        8
+                                    </a>
+                                    <a href="#"
+                                        class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                        9
+                                    </a>
+                                    <a href="#"
+                                        class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                        10
+                                    </a>
+                                    <a href="#"
+                                        class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                        <span class="sr-only">Next</span>
+                                        <i class="fas fa-chevron-right"></i>
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Applicant Profile Modal -->
+    <div class="fixed z-10 inset-0 overflow-y-auto hidden" id="profile-modal">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-4xl sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <div class="flex items-center justify-between">
+                                <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-applicant-name">
+                                    Applicant Profile
+                                </h3>
+                                <div class="ml-2 flex-shrink-0 flex">
+                                    <span
+                                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
+                                        id="modal-applicant-status">
+                                        Status
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="mt-4 border-b border-gray-200 pb-4">
+                                <div class="flex items-center">
+                                    <img class="h-16 w-16 rounded-full" id="modal-applicant-image"
+                                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                        alt="">
+                                    <div class="ml-4">
+                                        <h2 class="text-xl font-bold text-gray-900" id="modal-applicant-fullname">
+                                            Michael Johnson</h2>
+                                        <p class="text-sm text-gray-500" id="modal-applicant-position">Applied for
+                                            Senior Frontend Developer</p>
+                                        <div class="mt-1 flex items-center">
+                                            <i class="fas fa-envelope text-gray-400 mr-1"></i>
+                                            <span class="text-sm text-gray-500"
+                                                id="modal-applicant-email">michael.johnson@example.com</span>
+                                        </div>
+                                        <div class="mt-1 flex items-center">
+                                            <i class="fas fa-phone text-gray-400 mr-1"></i>
+                                            <span class="text-sm text-gray-500" id="modal-applicant-phone">(555)
+                                                123-4567</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <h4 class="text-md font-medium text-gray-900 mb-2">Experience</h4>
+                                    <div class="space-y-3" id="modal-applicant-experience">
+                                        <div class="border-l-2 border-gray-200 pl-3">
+                                            <div class="text-sm font-medium text-gray-900">Senior Developer at Previous
+                                                Company</div>
+                                            <div class="text-sm text-gray-500">Jan 2020 - Present</div>
+                                            <div class="text-sm text-gray-600 mt-1">Led frontend development team of 5
+                                                engineers. Implemented new React-based architecture.</div>
+                                        </div>
+                                        <div class="border-l-2 border-gray-200 pl-3">
+                                            <div class="text-sm font-medium text-gray-900">Frontend Developer at Another
+                                                Company</div>
+                                            <div class="text-sm text-gray-500">Mar 2018 - Dec 2019</div>
+                                            <div class="text-sm text-gray-600 mt-1">Developed responsive web
+                                                applications using React and Redux.</div>
+                                        </div>
+                                    </div>
+
+                                    <h4 class="text-md font-medium text-gray-900 mb-2 mt-4">Education</h4>
+                                    <div class="space-y-3" id="modal-applicant-education">
+                                        <div class="border-l-2 border-gray-200 pl-3">
+                                            <div class="text-sm font-medium text-gray-900">Stanford University</div>
+                                            <div class="text-sm text-gray-500">Master of Computer Science, 2018</div>
+                                        </div>
+                                        <div class="border-l-2 border-gray-200 pl-3">
+                                            <div class="text-sm font-medium text-gray-900">University of California,
+                                                Berkeley</div>
+                                            <div class="text-sm text-gray-500">Bachelor of Science in Computer Science,
+                                                2016</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="text-md font-medium text-gray-900 mb-2">Skills</h4>
+                                    <div class="flex flex-wrap gap-2 mb-4" id="modal-applicant-skills">
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-indigo-100 text-indigo-800">
+                                            JavaScript
+                                        </span>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-indigo-100 text-indigo-800">
+                                            React
+                                        </span>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-indigo-100 text-indigo-800">
+                                            TypeScript
+                                        </span>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-indigo-100 text-indigo-800">
+                                            HTML/CSS
+                                        </span>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-indigo-100 text-indigo-800">
+                                            Redux
+                                        </span>
+                                        <span
+                                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-sm font-medium bg-indigo-100 text-indigo-800">
+                                            Node.js
+                                        </span>
+                                    </div>
+
+                                    <h4 class="text-md font-medium text-gray-900 mb-2">Documents</h4>
+                                    <div class="space-y-2" id="modal-applicant-documents">
+                                        <a href="#"
+                                            class="flex items-center p-2 border border-gray-300 rounded-md hover:bg-gray-50">
+                                            <i class="fas fa-file-pdf text-red-500 mr-2"></i>
+                                            <span class="text-sm text-gray-700">Resume.pdf</span>
+                                        </a>
+                                        <a href="#"
+                                            class="flex items-center p-2 border border-gray-300 rounded-md hover:bg-gray-50">
+                                            <i class="fas fa-file-alt text-blue-500 mr-2"></i>
+                                            <span class="text-sm text-gray-700">Cover_Letter.pdf</span>
+                                        </a>
+                                        <a href="#"
+                                            class="flex items-center p-2 border border-gray-300 rounded-md hover:bg-gray-50">
+                                            <i class="fas fa-file-code text-green-500 mr-2"></i>
+                                            <span class="text-sm text-gray-700">Portfolio.pdf</span>
+                                        </a>
+                                    </div>
+
+                                    <h4 class="text-md font-medium text-gray-900 mb-2 mt-4">Notes</h4>
+                                    <div class="border border-gray-300 rounded-md p-2">
+                                        <textarea id="applicant-notes" rows="3"
+                                            class="w-full text-sm text-gray-700 border-0 focus:ring-0 focus:outline-none"
+                                            placeholder="Add notes about this candidate..."></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" id="update-status-btn"
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        Update Status
+                    </button>
+                    <button type="button" id="save-notes-btn"
+                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Save Notes
+                    </button>
+                    <button type="button" id="close-profile-modal"
+                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Update Modal -->
+    <div class="fixed z-20 inset-0 overflow-y-auto hidden" id="status-modal">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="status-modal-title">
+                                Update Application Status
+                            </h3>
+                            <div class="mt-4">
+                                <label for="application-status"
+                                    class="block text-sm font-medium text-gray-700">Status</label>
+                                <select id="application-status"
+                                    class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md border">
+                                    <option value="new">New</option>
+                                    <option value="review">In Review</option>
+                                    <option value="interview">Interview</option>
+                                    <option value="offer">Offer</option>
+                                    <option value="hired">Hired</option>
+                                    <option value="rejected">Rejected</option>
+                                </select>
+                            </div>
+                            <div class="mt-4">
+                                <label for="status-notes" class="block text-sm font-medium text-gray-700">Notes</label>
+                                <textarea id="status-notes" rows="3"
+                                    class="mt-1 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border"
+                                    placeholder="Add notes about this status change..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" id="confirm-status-update"
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        Update Status
+                    </button>
+                    <button type="button" id="close-status-modal"
+                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Notification -->
+    <div id="success-notification"
+        class="fixed inset-0 flex items-end justify-center px-4 py-6 pointer-events-none sm:p-6 sm:items-start sm:justify-end hidden">
+        <div
+            class="max-w-sm w-full bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden">
+            <div class="p-4">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-check-circle text-green-400 text-lg"></i>
+                    </div>
+                    <div class="ml-3 w-0 flex-1 pt-0.5">
+                        <p class="text-sm font-medium text-gray-900" id="notification-title">Success!</p>
+                        <p class="mt-1 text-sm text-gray-500" id="notification-message">Operation completed
+                            successfully.</p>
+                    </div>
+                    <div class="ml-4 flex-shrink-0 flex">
+                        <button id="close-notification"
+                            class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <span class="sr-only">Close</span>
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // User menu dropdown
+            const userMenuButton = document.getElementById('user-menu-button');
+            const userMenuDropdown = document.getElementById('user-menu-dropdown');
+
+            userMenuButton.addEventListener('click', function () {
+                userMenuDropdown.classList.toggle('hidden');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!userMenuButton.contains(event.target) && !userMenuDropdown.contains(event.target)) {
+                    userMenuDropdown.classList.add('hidden');
+                }
+            });
+
+            // Job filter
+            const jobFilter = document.getElementById('job-filter');
+            const statusFilter = document.getElementById('status-filter');
+            const applicationItems = document.querySelectorAll('.application-item');
+
+            function filterApplications() {
+                const jobValue = jobFilter.value;
+                const statusValue = statusFilter.value;
+
+                applicationItems.forEach(item => {
+                    const jobMatch = jobValue === 'all' || item.getAttribute('data-job') === jobValue;
+                    const statusMatch = statusValue === 'all' || item.getAttribute('data-status') === statusValue;
+
+                    if (jobMatch && statusMatch) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            }
+
+            jobFilter.addEventListener('change', filterApplications);
+            statusFilter.addEventListener('change', filterApplications);
+
+            // Search applications
+            const searchApplications = document.getElementById('search-applications');
+
+            searchApplications.addEventListener('input', function () {
+                const searchTerm = this.value.toLowerCase();
+
+                applicationItems.forEach(item => {
+                    const name = item.querySelector('.text-gray-900').textContent.toLowerCase();
+                    const position = item.querySelector('.text-gray-500').textContent.toLowerCase();
+
+                    if (name.includes(searchTerm) || position.includes(searchTerm)) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Export applications
+            const exportApplicationsButton = document.getElementById('export-applications');
+
+            exportApplicationsButton.addEventListener('click', function () {
+                alert('Exporting applications data...');
+            });
+
+            // Profile modal
+            const profileModal = document.getElementById('profile-modal');
+            const closeProfileModalButton = document.getElementById('close-profile-modal');
+            const viewApplicationButtons = document.querySelectorAll('.view-application-btn');
+
+            viewApplicationButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const applicationItem = this.closest('.application-item');
+                    const applicantName = applicationItem.querySelector('.text-gray-900').textContent;
+                    const applicantPosition = applicationItem.querySelector('.text-gray-500').textContent;
+                    const applicantStatus = applicationItem.querySelector('.rounded-full').textContent.trim();
+                    const applicantImage = applicationItem.querySelector('img').src;
+
+                    // Update modal content
+                    document.getElementById('modal-applicant-name').textContent = 'Applicant Profile: ' + applicantName;
+                    document.getElementById('modal-applicant-status').textContent = applicantStatus;
+                    document.getElementById('modal-applicant-image').src = applicantImage;
+                    document.getElementById('modal-applicant-fullname').textContent = applicantName;
+                    document.getElementById('modal-applicant-position').textContent = applicantPosition;
+
+                    // Set status class
+                    const statusElement = document.getElementById('modal-applicant-status');
+                    statusElement.className = 'px-2 inline-flex text-xs leading-5 font-semibold rounded-full';
+
+                    if (applicantStatus === 'New') {
+                        statusElement.classList.add('bg-green-100', 'text-green-800');
+                    } else if (applicantStatus === 'In Review') {
+                        statusElement.classList.add('bg-yellow-100', 'text-yellow-800');
+                    } else if (applicantStatus === 'Interview') {
+                        statusElement.classList.add('bg-blue-100', 'text-blue-800');
+                    } else if (applicantStatus === 'Offer Sent') {
+                        statusElement.classList.add('bg-purple-100', 'text-purple-800');
+                    } else if (applicantStatus === 'Hired') {
+                        statusElement.classList.add('bg-green-100', 'text-green-800');
+                    } else if (applicantStatus === 'Rejected') {
+                        statusElement.classList.add('bg-red-100', 'text-red-800');
+                    }
+
+                    // Show modal
+                    profileModal.classList.remove('hidden');
+                });
+            });
+
+            closeProfileModalButton.addEventListener('click', function () {
+                profileModal.classList.add('hidden');
+            });
+
+            // Status modal
+            const statusModal = document.getElementById('status-modal');
+            const updateStatusButton = document.getElementById('update-status-btn');
+            const closeStatusModalButton = document.getElementById('close-status-modal');
+            const confirmStatusUpdateButton = document.getElementById('confirm-status-update');
+            const successNotification = document.getElementById('success-notification');
+            const notificationTitle = document.getElementById('notification-title');
+            const notificationMessage = document.getElementById('notification-message');
+            const closeNotificationButton = document.getElementById('close-notification');
+
+            updateStatusButton.addEventListener('click', function () {
+                statusModal.classList.remove('hidden');
+            });
+
+            closeStatusModalButton.addEventListener('click', function () {
+                statusModal.classList.add('hidden');
+            });
+
+            confirmStatusUpdateButton.addEventListener('click', function () {
+                const status = document.getElementById('application-status').value;
+                const statusText = document.getElementById('application-status').options[document.getElementById('application-status').selectedIndex].text;
+
+                // Update status in profile modal
+                const statusElement = document.getElementById('modal-applicant-status');
+                statusElement.textContent = statusText;
+                statusElement.className = 'px-2 inline-flex text-xs leading-5 font-semibold rounded-full';
+
+                if (status === 'new') {
+                    statusElement.classList.add('bg-green-100', 'text-green-800');
+                } else if (status === 'review') {
+                    statusElement.classList.add('bg-yellow-100', 'text-yellow-800');
+                } else if (status === 'interview') {
+                    statusElement.classList.add('bg-blue-100', 'text-blue-800');
+                } else if (status === 'offer') {
+                    statusElement.classList.add('bg-purple-100', 'text-purple-800');
+                } else if (status === 'hired') {
+                    statusElement.classList.add('bg-green-100', 'text-green-800');
+                } else if (status === 'rejected') {
+                    statusElement.classList.add('bg-red-100', 'text-red-800');
+                }
+
+                // Close status modal
+                statusModal.classList.add('hidden');
+
+                // Show success notification
+                notificationTitle.textContent = 'Status Updated!';
+                notificationMessage.textContent = `Applicant status has been updated to ${statusText}.`;
+                successNotification.classList.remove('hidden');
+
+                // Auto-hide notification after 5 seconds
+                setTimeout(() => {
+                    successNotification.classList.add('hidden');
+                }, 5000);
+            });
+
+            closeNotificationButton.addEventListener('click', function () {
+                successNotification.classList.add('hidden');
+            });
+
+            // Save notes
+            const saveNotesButton = document.getElementById('save-notes-btn');
+
+            saveNotesButton.addEventListener('click', function () {
+                // Save notes (in a real app, this would be an AJAX request)
+
+                // Show success notification
+                notificationTitle.textContent = 'Notes Saved!';
+                notificationMessage.textContent = 'Your notes have been saved successfully.';
+                successNotification.classList.remove('hidden');
+
+                // Auto-hide notification after 5 seconds
+                setTimeout(() => {
+                    successNotification.classList.add('hidden');
+                }, 5000);
+            });
+
+            // Application action buttons
+            const scheduleInterviewButtons = document.querySelectorAll('.schedule-interview-btn');
+            const sendOfferButtons = document.querySelectorAll('.send-offer-btn');
+            const checkStatusButtons = document.querySelectorAll('.check-status-btn');
+            const onboardingButtons = document.querySelectorAll('.onboarding-btn');
+            const reconsiderButtons = document.querySelectorAll('.reconsider-btn');
+
+            scheduleInterviewButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const applicationItem = this.closest('.application-item');
+                    const applicantName = applicationItem.querySelector('.text-gray-900').textContent;
+
+                    // Schedule interview (in a real app, this would open a modal)
+                    alert(`Scheduling interview for: ${applicantName}`);
+
+                    // Update status
+                    applicationItem.querySelector('.rounded-full').classList.remove('bg-green-100', 'text-green-800', 'bg-yellow-100', 'text-yellow-800', 'bg-gray-100', 'text-gray-800');
+                    applicationItem.querySelector('.rounded-full').classList.add('bg-blue-100', 'text-blue-800');
+                    applicationItem.querySelector('.rounded-full').textContent = 'Interview';
+                    applicationItem.setAttribute('data-status', 'interview');
+                });
+            });
+
+            sendOfferButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const applicationItem = this.closest('.application-item');
+                    const applicantName = applicationItem.querySelector('.text-gray-900').textContent;
+
+                    if (confirm(`Are you sure you want to send an offer to ${applicantName}?`)) {
+                        // Send offer (in a real app, this would be an AJAX request)
+
+                        // Update status
+                        applicationItem.querySelector('.rounded-full').classList.remove('bg-blue-100', 'text-blue-800');
+                        applicationItem.querySelector('.rounded-full').classList.add('bg-purple-100', 'text-purple-800');
+                        applicationItem.querySelector('.rounded-full').textContent = 'Offer Sent';
+                        applicationItem.setAttribute('data-status', 'offer');
+
+                        // Update buttons
+                        const buttonsContainer = applicationItem.querySelector('.flex.space-x-2');
+                        buttonsContainer.innerHTML = `
+                            <button type="button" class="view-application-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                View Profile
+                            </button>
+                            <button type="button" class="check-status-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                Check Status
+                            </button>
+                        `;
+
+                        // Show success notification
+                        notificationTitle.textContent = 'Offer Sent!';
+                        notificationMessage.textContent = `An offer has been sent to ${applicantName}.`;
+                        successNotification.classList.remove('hidden');
+
+                        // Auto-hide notification after 5 seconds
+                        setTimeout(() => {
+                            successNotification.classList.add('hidden');
+                        }, 5000);
+                    }
+                });
+            });
+
+            checkStatusButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const applicationItem = this.closest('.application-item');
+                    const applicantName = applicationItem.querySelector('.text-gray-900').textContent;
+
+                    // Check status (in a real app, this would be an AJAX request)
+                    alert(`Checking offer status for: ${applicantName}`);
+                });
+            });
+
+            onboardingButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const applicationItem = this.closest('.application-item');
+                    const applicantName = applicationItem.querySelector('.text-gray-900').textContent;
+
+                    // Onboarding (in a real app, this would be an AJAX request)
+                    alert(`Starting onboarding process for: ${applicantName}`);
+                });
+            });
+
+            reconsiderButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const applicationItem = this.closest('.application-item');
+                    const applicantName = applicationItem.querySelector('.text-gray-900').textContent;
+
+                    if (confirm(`Are you sure you want to reconsider the application of ${applicantName}?`)) {
+                        // Reconsider application (in a real app, this would be an AJAX request)
+
+                        // Update status
+                        applicationItem.querySelector('.rounded-full').classList.remove('bg-red-100', 'text-red-800');
+                        applicationItem.querySelector('.rounded-full').classList.add('bg-yellow-100', 'text-yellow-800');
+                        applicationItem.querySelector('.rounded-full').textContent = 'In Review';
+                        applicationItem.setAttribute('data-status', 'review');
+
+                        // Update buttons
+                        const buttonsContainer = applicationItem.querySelector('.flex.space-x-2');
+                        buttonsContainer.innerHTML = `
+                            <button type="button" class="view-application-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                View Profile
+                            </button>
+                            <button type="button" class="schedule-interview-btn inline-flex items-center px-2.5 py-1.5 border border-transparent shadow-sm text-xs font-medium rounded text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                Schedule Interview
+                            </button>
+                        `;
+
+                        // Show success notification
+                        notificationTitle.textContent = 'Application Reconsidered!';
+                        notificationMessage.textContent = `The application of ${applicantName} has been moved back to review.`;
+                        successNotification.classList.remove('hidden');
+
+                        // Auto-hide notification after 5 seconds
+                        setTimeout(() => {
+                            successNotification.classList.add('hidden');
+                        }, 5000);
+                    }
+                });
+            });
+
+            // Notification button functionality
+            const notificationButton = document.getElementById('notification-button');
+
+            notificationButton.addEventListener('click', function () {
+                alert('You have no new notifications');
+            });
+        });
+    </script>
+</body>
+
+</html>
