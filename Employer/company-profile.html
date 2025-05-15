@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Company Profile | Employer Dashboard | CareerConnect</title>
+    <title>Company Profile</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -17,35 +17,20 @@
                 <div class="flex justify-between h-16">
                     <div class="flex">
                         <div class="flex-shrink-0 flex items-center">
-                            <span class="text-2xl font-bold text-indigo-600">CareerConnect</span>
+                            <span class="text-3xl font-bold text-blue-800"><span
+                                    class="text-yellow-400">JOB</span>CONNECT</span>
                         </div>
                         <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
-                            <a href="#"
-                                class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
-                                aria-current="page">
-                                Dashboard
-                            </a>
-                            <a href="job-postings.html"
-                                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                                Job Postings
-                            </a>
-                            <a href="applications.html"
-                                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                                Applications
-                            </a>
-                            <a href="company-profile.html"
-                                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                                Company Profile
-                            </a>
-                            <a href="messages.html"
-                                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                                Messages
+                            <a href="employer-dashboard.html"
+                                class="text-gray-900 inline-flex items-center px-1 pt-1 text-sm font-medium hover:text-yellow-400">
+                                <i class=" fas fa-arrow-left mr-2"></i>
+                                Back to Dashboard
                             </a>
                         </div>
                     </div>
                     <div class="hidden sm:ml-6 sm:flex sm:items-center">
                         <button type="button"
-                            class="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            class="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                             id="notification-button">
                             <span class="sr-only">View notifications</span>
                             <i class="fas fa-bell"></i>
@@ -55,12 +40,10 @@
                         <div class="ml-3 relative">
                             <div>
                                 <button type="button"
-                                    class="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                                    class="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                                     id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                     <span class="sr-only">Open user menu</span>
-                                    <img class="h-8 w-8 rounded-full"
-                                        src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                        alt="">
+                                    <img class="h-8 w-8 rounded-full" src="../images/logo2.jpeg" alt="logo">
                                 </button>
                             </div>
 
@@ -68,10 +51,9 @@
                             <div class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                                 id="user-menu-dropdown" role="menu" aria-orientation="vertical"
                                 aria-labelledby="user-menu-button" tabindex="-1">
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                    role="menuitem" tabindex="-1">Your Profile</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                                    role="menuitem" tabindex="-1">Settings</a>
+                                <a href="company-profile.html"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem"
+                                    tabindex="-1">Your Profile</a>
                                 <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     role="menuitem" tabindex="-1">Sign out</a>
                             </div>
@@ -80,7 +62,7 @@
                     <div class="-mr-2 flex items-center sm:hidden">
                         <!-- Mobile menu button -->
                         <button type="button"
-                            class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                             id="mobile-menu-button">
                             <span class="sr-only">Open main menu</span>
                             <i class="fas fa-bars"></i>
@@ -94,23 +76,19 @@
                 <div class="pt-2 pb-3 space-y-1">
                     <a href="employer-dashboard.html"
                         class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Dashboard</a>
-                    <a href="employer-job-postings.html"
+                    <a href="job-postings.html"
                         class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Job
                         Postings</a>
-                    <a href="employer-applications.html"
+                    <a href="applications.html"
                         class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Applications</a>
-                    <a href="employer-company-profile.html"
-                        class="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Company
+                    <a href="company-profile.html"
+                        class="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Company
                         Profile</a>
-                    <a href="employer-messages.html"
-                        class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Messages</a>
                 </div>
                 <div class="pt-4 pb-3 border-t border-gray-200">
                     <div class="flex items-center px-4">
                         <div class="flex-shrink-0">
-                            <img class="h-10 w-10 rounded-full"
-                                src="https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                alt="">
+                            <img class="h-10 w-10 rounded-full" src="../images/logo2.jpeg" alt="logo">
                         </div>
                         <div class="ml-3">
                             <div class="text-base font-medium text-gray-800">TechCorp Inc.</div>
@@ -140,12 +118,8 @@
                             <p class="mt-1 text-sm text-gray-600">Manage your company information and branding</p>
                         </div>
                         <div class="mt-4 flex md:mt-0 md:ml-4">
-                            <button type="button" id="preview-profile-btn"
-                                class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                                <i class="fas fa-eye mr-2"></i> Preview
-                            </button>
                             <button type="button" id="save-profile-btn"
-                                class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                 <i class="fas fa-save mr-2"></i> Save Changes
                             </button>
                         </div>
@@ -159,7 +133,7 @@
                         <div class="sm:hidden">
                             <label for="tabs" class="sr-only">Select a tab</label>
                             <select id="tabs" name="tabs"
-                                class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                                class="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md">
                                 <option value="basic-info">Basic Information</option>
                                 <option value="branding">Branding</option>
                                 <option value="team">Team Members</option>
@@ -170,7 +144,7 @@
                             <div class="border-b border-gray-200">
                                 <nav class="-mb-px flex space-x-8" aria-label="Tabs">
                                     <button
-                                        class="tab-button border-indigo-500 text-indigo-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
+                                        class="tab-button border-blue-500 text-blue-600 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
                                         data-tab="basic-info-tab">
                                         Basic Information
                                     </button>
@@ -202,8 +176,8 @@
                                     <label for="company-name" class="block text-sm font-medium text-gray-700">Company
                                         Name</label>
                                     <div class="mt-1">
-                                        <input type="text" name="company-name" id="company-name" value="TechCorp Inc."
-                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                        <input type="text" name="company-name" id="company-name" value=""
+                                            class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
                                     </div>
                                 </div>
 
@@ -212,7 +186,7 @@
                                         class="block text-sm font-medium text-gray-700">Industry</label>
                                     <div class="mt-1">
                                         <select id="industry" name="industry"
-                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                            class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
                                             <option value="technology" selected>Technology</option>
                                             <option value="finance">Finance</option>
                                             <option value="healthcare">Healthcare</option>
@@ -229,7 +203,7 @@
                                         class="block text-sm font-medium text-gray-700">Company Description</label>
                                     <div class="mt-1">
                                         <textarea id="company-description" name="company-description" rows="4"
-                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">TechCorp Inc. is a leading technology company specializing in innovative software solutions for businesses of all sizes. Founded in 2010, we have grown to become a trusted partner for over 500 companies worldwide.</textarea>
+                                            class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border"></textarea>
                                     </div>
                                     <p class="mt-2 text-sm text-gray-500">Brief description of your company that will
                                         appear on your profile and job listings.</p>
@@ -240,7 +214,7 @@
                                         Size</label>
                                     <div class="mt-1">
                                         <select id="company-size" name="company-size"
-                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                            class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
                                             <option value="1-10">1-10 employees</option>
                                             <option value="11-50">11-50 employees</option>
                                             <option value="51-200" selected>51-200 employees</option>
@@ -257,7 +231,7 @@
                                     <div class="mt-1">
                                         <input type="number" name="founded-year" id="founded-year" value="2010"
                                             min="1900" max="2023"
-                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                            class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
                                     </div>
                                 </div>
 
@@ -265,17 +239,16 @@
                                     <label for="headquarters"
                                         class="block text-sm font-medium text-gray-700">Headquarters</label>
                                     <div class="mt-1">
-                                        <input type="text" name="headquarters" id="headquarters"
-                                            value="San Francisco, CA"
-                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                        <input type="text" name="headquarters" id="headquarters" value=""
+                                            class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
                                     </div>
                                 </div>
 
                                 <div class="sm:col-span-6">
                                     <label for="website" class="block text-sm font-medium text-gray-700">Website</label>
                                     <div class="mt-1">
-                                        <input type="url" name="website" id="website" value="https://www.techcorp.com"
-                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                        <input type="url" name="website" id="website" value=""
+                                            class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
                                     </div>
                                 </div>
 
@@ -283,9 +256,8 @@
                                     <label for="contact-email" class="block text-sm font-medium text-gray-700">Contact
                                         Email</label>
                                     <div class="mt-1">
-                                        <input type="email" name="contact-email" id="contact-email"
-                                            value="hr@techcorp.com"
-                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                        <input type="email" name="contact-email" id="contact-email" value=""
+                                            class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
                                     </div>
                                 </div>
 
@@ -293,8 +265,8 @@
                                     <label for="contact-phone" class="block text-sm font-medium text-gray-700">Contact
                                         Phone</label>
                                     <div class="mt-1">
-                                        <input type="tel" name="contact-phone" id="contact-phone" value="(555) 123-4567"
-                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                        <input type="tel" name="contact-phone" id="contact-phone" value=""
+                                            class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
                                     </div>
                                 </div>
                             </div>
@@ -309,11 +281,11 @@
                                     <label class="block text-sm font-medium text-gray-700">Company Logo</label>
                                     <div class="mt-1 flex items-center">
                                         <span class="h-12 w-12 rounded-full overflow-hidden bg-gray-100">
-                                            <img src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                                                alt="Company logo" class="h-full w-full object-cover">
+                                            <img src="../images/logo2.jpeg" alt="Company logo"
+                                                class="h-full w-full object-cover">
                                         </span>
                                         <button type="button"
-                                            class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                             Change
                                         </button>
                                     </div>
@@ -324,11 +296,9 @@
                                     <div
                                         class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
                                         <div class="space-y-1 text-center">
-                                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-                                                alt="Company cover" class="mx-auto h-40 w-full object-cover rounded-md">
                                             <div class="flex text-sm text-gray-600 mt-2 justify-center">
                                                 <label for="cover-upload"
-                                                    class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                                    class="relative cursor-pointer bg-white rounded-md font-medium text-blue-600 hover:text-blue-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-blue-500">
                                                     <span>Upload a new image</span>
                                                     <input id="cover-upload" name="cover-upload" type="file"
                                                         class="sr-only">
@@ -340,41 +310,11 @@
                                 </div>
 
                                 <div>
-                                    <label for="company-colors" class="block text-sm font-medium text-gray-700">Company
-                                        Colors</label>
-                                    <div class="mt-1 grid grid-cols-2 gap-4">
-                                        <div>
-                                            <label for="primary-color"
-                                                class="block text-xs font-medium text-gray-500">Primary Color</label>
-                                            <div class="mt-1 flex items-center">
-                                                <input type="color" id="primary-color" name="primary-color"
-                                                    value="#4F46E5"
-                                                    class="h-8 w-8 rounded-md border border-gray-300 cursor-pointer">
-                                                <input type="text" value="#4F46E5"
-                                                    class="ml-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
-                                            </div>
-                                        </div>
-                                        <div>
-                                            <label for="secondary-color"
-                                                class="block text-xs font-medium text-gray-500">Secondary Color</label>
-                                            <div class="mt-1 flex items-center">
-                                                <input type="color" id="secondary-color" name="secondary-color"
-                                                    value="#10B981"
-                                                    class="h-8 w-8 rounded-md border border-gray-300 cursor-pointer">
-                                                <input type="text" value="#10B981"
-                                                    class="ml-2 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div>
                                     <label for="company-slogan" class="block text-sm font-medium text-gray-700">Company
                                         Slogan</label>
                                     <div class="mt-1">
-                                        <input type="text" name="company-slogan" id="company-slogan"
-                                            value="Innovating for a better tomorrow"
-                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                        <input type="text" name="company-slogan" id="company-slogan" value=""
+                                            class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
                                     </div>
                                     <p class="mt-2 text-sm text-gray-500">A short tagline that represents your company's
                                         mission.</p>
@@ -385,7 +325,7 @@
                                         Values</label>
                                     <div class="mt-1">
                                         <textarea id="company-values" name="company-values" rows="4"
-                                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">Innovation, Integrity, Collaboration, Excellence, Customer Focus</textarea>
+                                            class="shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">Innovation, Integrity, Collaboration, Excellence, Customer Focus</textarea>
                                     </div>
                                     <p class="mt-2 text-sm text-gray-500">Core values that define your company culture.
                                     </p>
@@ -399,7 +339,7 @@
                         <div class="flex justify-between items-center mb-4">
                             <h2 class="text-lg font-medium text-gray-900">Team Members</h2>
                             <button type="button" id="add-team-member-btn"
-                                class="inline-flex items-center px-3 py-1.5 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                class="inline-flex items-center px-3 py-1.5 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                 <i class="fas fa-plus mr-1.5"></i> Add Member
                             </button>
                         </div>
@@ -418,7 +358,7 @@
                                     </div>
                                     <div class="flex space-x-2">
                                         <button type="button"
-                                            class="edit-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            class="edit-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                             Edit
                                         </button>
                                         <button type="button"
@@ -439,7 +379,7 @@
                                     </div>
                                     <div class="flex space-x-2">
                                         <button type="button"
-                                            class="edit-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            class="edit-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                             Edit
                                         </button>
                                         <button type="button"
@@ -460,7 +400,7 @@
                                     </div>
                                     <div class="flex space-x-2">
                                         <button type="button"
-                                            class="edit-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            class="edit-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                             Edit
                                         </button>
                                         <button type="button"
@@ -481,7 +421,7 @@
                                     </div>
                                     <div class="flex space-x-2">
                                         <button type="button"
-                                            class="edit-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            class="edit-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                             Edit
                                         </button>
                                         <button type="button"
@@ -508,7 +448,7 @@
                                             class="block text-sm font-medium text-gray-700">LinkedIn</label>
                                         <input type="url" name="linkedin" id="linkedin"
                                             value="https://www.linkedin.com/company/techcorp"
-                                            class="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                            class="mt-1 shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
                                     </div>
                                 </div>
 
@@ -522,7 +462,7 @@
                                             class="block text-sm font-medium text-gray-700">Twitter</label>
                                         <input type="url" name="twitter" id="twitter"
                                             value="https://twitter.com/techcorp"
-                                            class="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                            class="mt-1 shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
                                     </div>
                                 </div>
 
@@ -536,7 +476,7 @@
                                             class="block text-sm font-medium text-gray-700">Instagram</label>
                                         <input type="url" name="instagram" id="instagram"
                                             value="https://www.instagram.com/techcorp"
-                                            class="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                            class="mt-1 shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
                                     </div>
                                 </div>
 
@@ -550,7 +490,7 @@
                                             class="block text-sm font-medium text-gray-700">Facebook</label>
                                         <input type="url" name="facebook" id="facebook"
                                             value="https://www.facebook.com/techcorp"
-                                            class="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                            class="mt-1 shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
                                     </div>
                                 </div>
 
@@ -563,7 +503,7 @@
                                         <label for="github"
                                             class="block text-sm font-medium text-gray-700">GitHub</label>
                                         <input type="url" name="github" id="github" value="https://github.com/techcorp"
-                                            class="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                            class="mt-1 shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
                                     </div>
                                 </div>
 
@@ -577,7 +517,7 @@
                                             class="block text-sm font-medium text-gray-700">YouTube</label>
                                         <input type="url" name="youtube" id="youtube"
                                             value="https://www.youtube.com/techcorp"
-                                            class="mt-1 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
+                                            class="mt-1 shadow-sm focus:ring-blue-500 focus:border-blue-500 block w-full sm:text-sm border-gray-300 rounded-md p-2 border">
                                     </div>
                                 </div>
                             </div>
@@ -610,21 +550,21 @@
                                         <label for="member-name"
                                             class="block text-sm font-medium text-gray-700">Name</label>
                                         <input type="text" name="member-name" id="member-name"
-                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border"
+                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border"
                                             required>
                                     </div>
                                     <div>
                                         <label for="member-title" class="block text-sm font-medium text-gray-700">Job
                                             Title</label>
                                         <input type="text" name="member-title" id="member-title"
-                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border"
+                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border"
                                             required>
                                     </div>
                                     <div>
                                         <label for="member-bio"
                                             class="block text-sm font-medium text-gray-700">Bio</label>
                                         <textarea id="member-bio" name="member-bio" rows="3"
-                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border"></textarea>
+                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border"></textarea>
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-gray-700">Photo</label>
@@ -637,7 +577,7 @@
                                                 </svg>
                                             </span>
                                             <button type="button"
-                                                class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-sm leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                                 Upload
                                             </button>
                                         </div>
@@ -646,7 +586,7 @@
                                         <label for="member-linkedin"
                                             class="block text-sm font-medium text-gray-700">LinkedIn URL</label>
                                         <input type="url" name="member-linkedin" id="member-linkedin"
-                                            class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border">
+                                            class="mt-1 focus:ring-blue-500 focus:border-blue-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md p-2 border">
                                     </div>
                                 </div>
                             </form>
@@ -655,11 +595,11 @@
                 </div>
                 <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
                     <button type="button" id="save-team-member"
-                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">
                         Save
                     </button>
                     <button type="button" id="close-team-member-modal"
-                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
                         Cancel
                     </button>
                 </div>
@@ -684,7 +624,7 @@
                     </div>
                     <div class="ml-4 flex-shrink-0 flex">
                         <button id="close-notification"
-                            class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            class="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                             <span class="sr-only">Close</span>
                             <i class="fas fa-times"></i>
                         </button>
@@ -730,10 +670,10 @@
 
                     // Update active tab button
                     tabButtons.forEach(btn => {
-                        btn.classList.remove('border-indigo-500', 'text-indigo-600');
+                        btn.classList.remove('border-blue-500', 'text-blue-600');
                         btn.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
                     });
-                    this.classList.add('border-indigo-500', 'text-indigo-600');
+                    this.classList.add('border-blue-500', 'text-blue-600');
                     this.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
 
                     // Show active tab content
@@ -771,11 +711,11 @@
 
                     // Update desktop tabs
                     tabButtons.forEach(btn => {
-                        btn.classList.remove('border-indigo-500', 'text-indigo-600');
+                        btn.classList.remove('border-blue-500', 'text-blue-600');
                         btn.classList.add('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
 
                         if (btn.getAttribute('data-tab') === tabId) {
-                            btn.classList.add('border-indigo-500', 'text-indigo-600');
+                            btn.classList.add('border-blue-500', 'text-blue-600');
                             btn.classList.remove('border-transparent', 'text-gray-500', 'hover:text-gray-700', 'hover:border-gray-300');
                         }
                     });
@@ -807,12 +747,6 @@
                 successNotification.classList.add('hidden');
             });
 
-            // Preview profile
-            const previewProfileBtn = document.getElementById('preview-profile-btn');
-
-            previewProfileBtn.addEventListener('click', function () {
-                alert('Opening company profile preview...');
-            });
 
             // Team member modal
             const teamMemberModal = document.getElementById('team-member-modal');
@@ -890,7 +824,7 @@
                             </div>
                         </div>
                         <div class="flex space-x-2">
-                            <button type="button" class="edit-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            <button type="button" class="edit-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
                                 Edit
                             </button>
                             <button type="button" class="delete-team-member-btn inline-flex items-center px-2.5 py-1.5 border border-transparent shadow-sm text-xs font-medium rounded text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
