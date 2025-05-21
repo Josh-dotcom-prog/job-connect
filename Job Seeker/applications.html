@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Applications | Job Seeker Dashboard | CareerConnect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <div class="min-h-full">
+        <nav class="bg-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex">
+                        <div class="flex-shrink-0 flex items-center">
+                            <span class="text-2xl font-bold text-indigo-600">CareerConnect</span>
+                        </div>
+                        <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
+                            <a href="job-seeker-dashboard.html"
+                                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Dashboard
+                            </a>
+                            <a href="browse-jobs.html"
+                                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Browse Jobs
+                            </a>
+                            <a href="my-applications.html"
+                                class="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium"
+                                aria-current="page">
+                                My Applications
+                            </a>
+                            <a href="#"
+                                class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Profile
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                        <button type="button"
+                            class="bg-white p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            id="notification-button">
+                            <span class="sr-only">View notifications</span>
+                            <i class="fas fa-bell"></i>
+                        </button>
+
+                        <!-- Profile dropdown -->
+                        <div class="ml-3 relative">
+                            <div>
+                                <button type="button"
+                                    class="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:  class="
+                                    max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none
+                                    focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" id="user-menu-button"
+                                    aria-expanded="false" aria-haspopup="true">
+                                    <span class="sr-only">Open user menu</span>
+                                    <img class="h-8 w-8 rounded-full"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                        alt="">
+                                </button>
+                            </div>
+
+                            <!-- Dropdown menu, show/hide based on menu state -->
+                            <div class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                                id="user-menu-dropdown" role="menu" aria-orientation="vertical"
+                                aria-labelledby="user-menu-button" tabindex="-1">
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem" tabindex="-1">Your Profile</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem" tabindex="-1">Settings</a>
+                                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    role="menuitem" tabindex="-1">Sign out</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="-mr-2 flex items-center sm:hidden">
+                        <!-- Mobile menu button -->
+                        <button type="button"
+                            class="bg-white inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                            id="mobile-menu-button">
+                            <span class="sr-only">Open main menu</span>
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile menu, show/hide based on menu state -->
+            <div class="hidden sm:hidden" id="mobile-menu">
+                <div class="pt-2 pb-3 space-y-1">
+                    <a href="job-seeker-dashboard.html"
+                        class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Dashboard</a>
+                    <a href="browse-jobs.html"
+                        class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Browse
+                        Jobs</a>
+                    <a href="my-applications.html"
+                        class="bg-indigo-50 border-indigo-500 text-indigo-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">My
+                        Applications</a>
+                    <a href="#"
+                        class="border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Profile</a>
+                </div>
+                <div class="pt-4 pb-3 border-t border-gray-200">
+                    <div class="flex items-center px-4">
+                        <div class="flex-shrink-0">
+                            <img class="h-10 w-10 rounded-full"
+                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                alt="">
+                        </div>
+                        <div class="ml-3">
+                            <div class="text-base font-medium text-gray-800">John Smith</div>
+                            <div class="text-sm font-medium text-gray-500">john.smith@example.com</div>
+                        </div>
+                    </div>
+                    <div class="mt-3 space-y-1">
+                        <a href="#"
+                            class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Your
+                            Profile</a>
+                        <a href="#"
+                            class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Settings</a>
+                        <a href="#"
+                            class="block px-4 py-2 text-base font-medium text-gray-500 hover:text-gray-800 hover:bg-gray-100">Sign
+                            out</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="py-10">
+            <header>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h1 class="text-3xl font-bold leading-tight text-gray-900">My Applications</h1>
+                </div>
+            </header>
+            <main>
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                    <!-- Application Stats -->
+                    <div class="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-4">
+                        <div class="bg-white overflow-hidden shadow rounded-lg">
+                            <div class="px-4 py-5 sm:p-6">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 bg-indigo-500 rounded-md p-3">
+                                        <i class="fas fa-file-alt text-white"></i>
+                                    </div>
+                                    <div class="ml-5 w-0 flex-1">
+                                        <dl>
+                                            <dt class="text-sm font-medium text-gray-500 truncate">Total Applications
+                                            </dt>
+                                            <dd class="flex items-baseline">
+                                                <div class="text-2xl font-semibold text-gray-900">12</div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white overflow-hidden shadow rounded-lg">
+                            <div class="px-4 py-5 sm:p-6">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 bg-yellow-500 rounded-md p-3">
+                                        <i class="fas fa-hourglass-half text-white"></i>
+                                    </div>
+                                    <div class="ml-5 w-0 flex-1">
+                                        <dl>
+                                            <dt class="text-sm font-medium text-gray-500 truncate">In Review</dt>
+                                            <dd class="flex items-baseline">
+                                                <div class="text-2xl font-semibold text-gray-900">5</div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white overflow-hidden shadow rounded-lg">
+                            <div class="px-4 py-5 sm:p-6">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 bg-green-500 rounded-md p-3">
+                                        <i class="fas fa-check-circle text-white"></i>
+                                    </div>
+                                    <div class="ml-5 w-0 flex-1">
+                                        <dl>
+                                            <dt class="text-sm font-medium text-gray-500 truncate">Interviews</dt>
+                                            <dd class="flex items-baseline">
+                                                <div class="text-2xl font-semibold text-gray-900">3</div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white overflow-hidden shadow rounded-lg">
+                            <div class="px-4 py-5 sm:p-6">
+                                <div class="flex items-center">
+                                    <div class="flex-shrink-0 bg-red-500 rounded-md p-3">
+                                        <i class="fas fa-times-circle text-white"></i>
+                                    </div>
+                                    <div class="ml-5 w-0 flex-1">
+                                        <dl>
+                                            <dt class="text-sm font-medium text-gray-500 truncate">Rejected</dt>
+                                            <dd class="flex items-baseline">
+                                                <div class="text-2xl font-semibold text-gray-900">2</div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Application Filters -->
+                    <div class="mt-6 bg-white shadow rounded-lg p-4">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div class="flex flex-col md:flex-row md:items-center space-y-3 md:space-y-0 md:space-x-4">
+                                <div>
+                                    <label for="status-filter"
+                                        class="block text-sm font-medium text-gray-700">Status</label>
+                                    <select id="status-filter" name="status-filter"
+                                        class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md border">
+                                        <option value="all" selected>All Applications</option>
+                                        <option value="applied">Applied</option>
+                                        <option value="in-review">In Review</option>
+                                        <option value="interview">Interview</option>
+                                        <option value="offer">Offer</option>
+                                        <option value="rejected">Rejected</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="date-filter" class="block text-sm font-medium text-gray-700">Date
+                                        Range</label>
+                                    <select id="date-filter" name="date-filter"
+                                        class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md border">
+                                        <option value="all-time" selected>All Time</option>
+                                        <option value="last-week">Last Week</option>
+                                        <option value="last-month">Last Month</option>
+                                        <option value="last-3-months">Last 3 Months</option>
+                                        <option value="last-6-months">Last 6 Months</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="mt-3 md:mt-0">
+                                <div class="relative rounded-md shadow-sm">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fas fa-search text-gray-400"></i>
+                                    </div>
+                                    <input type="text" name="search" id="search"
+                                        class="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md p-2 border"
+                                        placeholder="Search applications...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Applications List -->
+                    <div class="mt-6 bg-white shadow overflow-hidden sm:rounded-md">
+                        <ul class="divide-y divide-gray-200" id="applications-list">
+                            <!-- Application 1 -->
+                            <li>
+                                <div class="px-4 py-4 sm:px-6 hover:bg-gray-50">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <div
+                                                class="flex-shrink-0 h-12 w-12 rounded-md bg-indigo-100 flex items-center justify-center">
+                                                <img class="h-10 w-10 rounded-md"
+                                                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                                                    alt="Company logo">
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-indigo-600">Senior Frontend
+                                                    Developer</div>
+                                                <div class="text-sm text-gray-500">TechCorp Inc.</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col items-end">
+                                            <span
+                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                Interview Scheduled
+                                            </span>
+                                            <div class="text-sm text-gray-500 mt-1">Applied on May 12, 2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 sm:flex sm:justify-between">
+                                        <div class="sm:flex">
+                                            <div class="flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-map-marker-alt flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                                <p>San Francisco, CA</p>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-briefcase flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                                <p>Full-time</p>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-dollar-sign flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                                <p>$120,000 - $150,000</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                                            <i class="fas fa-calendar flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                            <p>Interview on <time datetime="2023-05-25">May 25, 2023</time> at 2:00 PM
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 flex justify-between items-center">
+                                        <div class="flex space-x-2">
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                                React
+                                            </span>
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                                TypeScript
+                                            </span>
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                                Tailwind CSS
+                                            </span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button type="button"
+                                                class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                View Details
+                                            </button>
+                                            <button type="button"
+                                                class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                Withdraw
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- Application 2 -->
+                            <li>
+                                <div class="px-4 py-4 sm:px-6 hover:bg-gray-50">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <div
+                                                class="flex-shrink-0 h-12 w-12 rounded-md bg-blue-100 flex items-center justify-center">
+                                                <img class="h-10 w-10 rounded-md"
+                                                    src="https://tailwindui.com/img/logos/workflow-mark-blue-600.svg"
+                                                    alt="Company logo">
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-indigo-600">Data Scientist</div>
+                                                <div class="text-sm text-gray-500">DataViz Analytics</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col items-end">
+                                            <span
+                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                                In Review
+                                            </span>
+                                            <div class="text-sm text-gray-500 mt-1">Applied on May 5, 2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 sm:flex sm:justify-between">
+                                        <div class="sm:flex">
+                                            <div class="flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-map-marker-alt flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                                <p>Remote</p>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-briefcase flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                                <p>Full-time</p>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-dollar-sign flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                                <p>$110,000 - $140,000</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                                            <i class="fas fa-clock flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                            <p>Application under review</p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 flex justify-between items-center">
+                                        <div class="flex space-x-2">
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                                Python
+                                            </span>
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                                Machine Learning
+                                            </span>
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                                SQL
+                                            </span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button type="button"
+                                                class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                View Details
+                                            </button>
+                                            <button type="button"
+                                                class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                Withdraw
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- Application 3 -->
+                            <li>
+                                <div class="px-4 py-4 sm:px-6 hover:bg-gray-50">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <div
+                                                class="flex-shrink-0 h-12 w-12 rounded-md bg-green-100 flex items-center justify-center">
+                                                <img class="h-10 w-10 rounded-md"
+                                                    src="https://tailwindui.com/img/logos/workflow-mark-green-600.svg"
+                                                    alt="Company logo">
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-indigo-600">UX/UI Designer</div>
+                                                <div class="text-sm text-gray-500">CreativeMinds Studio</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col items-end">
+                                            <span
+                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                                Interview Completed
+                                            </span>
+                                            <div class="text-sm text-gray-500 mt-1">Applied on April 28, 2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 sm:flex sm:justify-between">
+                                        <div class="sm:flex">
+                                            <div class="flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-map-marker-alt flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                                <p>New York, NY</p>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-briefcase flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                                <p>Contract</p>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-dollar-sign flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                                <p>$80 - $100 per hour</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                                            <i class="fas fa-check-circle flex-shrink-0 mr-1.5 text-green-500"></i>
+                                            <p>Interview completed on <time datetime="2023-05-15">May 15, 2023</time>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 flex justify-between items-center">
+                                        <div class="flex space-x-2">
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                                Figma
+                                            </span>
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                                Adobe XD
+                                            </span>
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                                User Research
+                                            </span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button type="button"
+                                                class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                View Details
+                                            </button>
+                                            <button type="button"
+                                                class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                Withdraw
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- Application 4 -->
+                            <li>
+                                <div class="px-4 py-4 sm:px-6 hover:bg-gray-50">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <div
+                                                class="flex-shrink-0 h-12 w-12 rounded-md bg-purple-100 flex items-center justify-center">
+                                                <img class="h-10 w-10 rounded-md"
+                                                    src="https://tailwindui.com/img/logos/workflow-mark-purple-600.svg"
+                                                    alt="Company logo">
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-indigo-600">DevOps Engineer</div>
+                                                <div class="text-sm text-gray-500">CloudScale Solutions</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col items-end">
+                                            <span
+                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                                Rejected
+                                            </span>
+                                            <div class="text-sm text-gray-500 mt-1">Applied on April 15, 2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 sm:flex sm:justify-between">
+                                        <div class="sm:flex">
+                                            <div class="flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-map-marker-alt flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                                <p>Austin, TX (Hybrid)</p>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-briefcase flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                                <p>Full-time</p>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-dollar-sign flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                                <p>$130,000 - $160,000</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                                            <i class="fas fa-times-circle flex-shrink-0 mr-1.5 text-red-500"></i>
+                                            <p>Rejected on <time datetime="2023-05-01">May 1, 2023</time></p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 flex justify-between items-center">
+                                        <div class="flex space-x-2">
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                                AWS
+                                            </span>
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                                Docker
+                                            </span>
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                                Kubernetes
+                                            </span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button type="button"
+                                                class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                View Details
+                                            </button>
+                                            <button type="button"
+                                                class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-gray-700 bg-gray-100 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                                                Archive
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <!-- Application 5 -->
+                            <li>
+                                <div class="px-4 py-4 sm:px-6 hover:bg-gray-50">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center">
+                                            <div
+                                                class="flex-shrink-0 h-12 w-12 rounded-md bg-red-100 flex items-center justify-center">
+                                                <img class="h-10 w-10 rounded-md"
+                                                    src="https://tailwindui.com/img/logos/workflow-mark-red-600.svg"
+                                                    alt="Company logo">
+                                            </div>
+                                            <div class="ml-4">
+                                                <div class="text-sm font-medium text-indigo-600">Marketing Coordinator
+                                                </div>
+                                                <div class="text-sm text-gray-500">BrandBoost Marketing</div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col items-end">
+                                            <span
+                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">
+                                                Applied
+                                            </span>
+                                            <div class="text-sm text-gray-500 mt-1">Applied on May 18, 2023</div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 sm:flex sm:justify-between">
+                                        <div class="sm:flex">
+                                            <div class="flex items-center text-sm text-gray-500">
+                                                <i class="fas fa-map-marker-alt flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                                <p>Chicago, IL</p>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-briefcase flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                                <p>Part-time</p>
+                                            </div>
+                                            <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0 sm:ml-6">
+                                                <i class="fas fa-dollar-sign flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                                <p>$25 - $30 per hour</p>
+                                            </div>
+                                        </div>
+                                        <div class="mt-2 flex items-center text-sm text-gray-500 sm:mt-0">
+                                            <i class="fas fa-paper-plane flex-shrink-0 mr-1.5 text-gray-400"></i>
+                                            <p>Application submitted</p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-2 flex justify-between items-center">
+                                        <div class="flex space-x-2">
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                                Social Media
+                                            </span>
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                                Content Creation
+                                            </span>
+                                            <span
+                                                class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                                Email Marketing
+                                            </span>
+                                        </div>
+                                        <div class="flex space-x-2">
+                                            <button type="button"
+                                                class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                View Details
+                                            </button>
+                                            <button type="button"
+                                                class="inline-flex items-center px-2.5 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                Withdraw
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div
+                        class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6 rounded-b-lg">
+                        <div class="flex-1 flex justify-between sm:hidden">
+                            <a href="#"
+                                class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                Previous
+                            </a>
+                            <a href="#"
+                                class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                                Next
+                            </a>
+                        </div>
+                        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+                            <div>
+                                <p class="text-sm text-gray-700">
+                                    Showing <span class="font-medium">1</span> to <span class="font-medium">5</span> of
+                                    <span class="font-medium">12</span> applications
+                                </p>
+                            </div>
+                            <div>
+                                <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px"
+                                    aria-label="Pagination">
+                                    <a href="#"
+                                        class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                        <span class="sr-only">Previous</span>
+                                        <i class="fas fa-chevron-left h-5 w-5"></i>
+                                    </a>
+                                    <a href="#" aria-current="page"
+                                        class="z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                        1
+                                    </a>
+                                    <a href="#"
+                                        class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                        2
+                                    </a>
+                                    <a href="#"
+                                        class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                                        3
+                                    </a>
+                                    <a href="#"
+                                        class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                                        <span class="sr-only">Next</span>
+                                        <i class="fas fa-chevron-right h-5 w-5"></i>
+                                    </a>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Application Details Modal -->
+    <div class="fixed z-10 inset-0 overflow-y-auto hidden" id="application-details-modal">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+                <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+            </div>
+
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-3xl sm:w-full">
+                <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center">
+                                    <div
+                                        class="flex-shrink-0 h-12 w-12 rounded-md bg-indigo-100 flex items-center justify-center">
+                                        <img class="h-10 w-10 rounded-md"
+                                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                                            alt="Company logo" id="modal-company-logo">
+                                    </div>
+                                    <div class="ml-4">
+                                        <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-job-title">
+                                            Senior Frontend Developer</h3>
+                                        <div class="flex items-center">
+                                            <p class="text-sm font-medium text-gray-900" id="modal-company-name">
+                                                TechCorp Inc.</p>
+                                            <span class="mx-2 text-gray-500">•</span>
+                                            <p class="text-sm text-gray-500" id="modal-job-location">San Francisco, CA
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" id="close-modal-btn"
+                                    class="bg-white rounded-md text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    <span class="sr-only">Close</span>
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+
+                            <div class="mt-4 border-t border-gray-200 pt-4">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span
+                                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800"
+                                        id="modal-application-status">
+                                        Interview Scheduled
+                                    </span>
+                                    <span
+                                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                        <i class="fas fa-calendar-alt mr-1"></i> <span
+                                            id="modal-application-date">Applied on May 12, 2023</span>
+                                    </span>
+                                </div>
+
+                                <!-- Application Timeline -->
+                                <div class="flow-root">
+                                    <h4 class="text-lg font-medium text-gray-900 mb-4">Application Timeline</h4>
+                                    <ul class="-mb-8">
+                                        <li>
+                                            <div class="relative pb-8">
+                                                <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
+                                                    aria-hidden="true"></span>
+                                                <div class="relative flex space-x-3">
+                                                    <div>
+                                                        <span
+                                                            class="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center ring-8 ring-white">
+                                                            <i class="fas fa-check text-white"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                                                        <div>
+                                                            <p class="text-sm text-gray-500">Application submitted</p>
+                                                        </div>
+                                                        <div class="text-right text-sm whitespace-nowrap text-gray-500">
+                                                            <time datetime="2023-05-12">May 12, 2023</time>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="relative pb-8">
+                                                <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
+                                                    aria-hidden="true"></span>
+                                                <div class="relative flex space-x-3">
+                                                    <div>
+                                                        <span
+                                                            class="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center ring-8 ring-white">
+                                                            <i class="fas fa-check text-white"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                                                        <div>
+                                                            <p class="text-sm text-gray-500">Application reviewed by
+                                                                employer</p>
+                                                        </div>
+                                                        <div class="text-right text-sm whitespace-nowrap text-gray-500">
+                                                            <time datetime="2023-05-15">May 15, 2023</time>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="relative pb-8">
+                                                <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
+                                                    aria-hidden="true"></span>
+                                                <div class="relative flex space-x-3">
+                                                    <div>
+                                                        <span
+                                                            class="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center ring-8 ring-white">
+                                                            <i class="fas fa-check text-white"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                                                        <div>
+                                                            <p class="text-sm text-gray-500">Technical assessment
+                                                                completed</p>
+                                                        </div>
+                                                        <div class="text-right text-sm whitespace-nowrap text-gray-500">
+                                                            <time datetime="2023-05-18">May 18, 2023</time>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="relative pb-8">
+                                                <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200"
+                                                    aria-hidden="true"></span>
+                                                <div class="relative flex space-x-3">
+                                                    <div>
+                                                        <span
+                                                            class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center ring-8 ring-white">
+                                                            <i class="fas fa-calendar-check text-white"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                                                        <div>
+                                                            <p class="text-sm text-gray-500">Interview scheduled</p>
+                                                        </div>
+                                                        <div class="text-right text-sm whitespace-nowrap text-gray-500">
+                                                            <time datetime="2023-05-20">May 20, 2023</time>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="relative">
+                                                <div class="relative flex space-x-3">
+                                                    <div>
+                                                        <span
+                                                            class="h-8 w-8 rounded-full bg-gray-400 flex items-center justify-center ring-8 ring-white">
+                                                            <i class="fas fa-hourglass-half text-white"></i>
+                                                        </span>
+                                                    </div>
+                                                    <div class="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+                                                        <div>
+                                                            <p class="text-sm text-gray-500">Upcoming interview</p>
+                                                        </div>
+                                                        <div class="text-right text-sm whitespace-nowrap text-gray-500">
+                                                            <time datetime="2023-05-25">May 25, 2023</time>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Interview Details -->
+                                <div class="mt-6 bg-gray-50 p-4 rounded-md">
+                                    <h4 class="text-lg font-medium text-gray-900 mb-2">Interview Details</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-500">Date & Time</p>
+                                            <p class="text-sm text-gray-900">Thursday, May 25, 2023 at 2:00 PM (PST)</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-500">Format</p>
+                                            <p class="text-sm text-gray-900">Video Interview (Zoom)</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-500">Interviewer</p>
+                                            <p class="text-sm text-gray-900">Sarah Johnson, Engineering Manager</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-500">Duration</p>
+                                            <p class="text-sm text-gray-900">60 minutes</p>
+                                        </div>
+                                    </div>
+                                    <div class="mt-4">
+                                        <p class="text-sm font-medium text-gray-500">Notes</p>
+                                        <p class="text-sm text-gray-900">Please be prepared to discuss your experience
+                                            with React and TypeScript. There will also be a short coding exercise to
+                                            demonstrate your problem-solving skills.</p>
+                                    </div>
+                                    <div class="mt-4">
+                                        <button type="button"
+                                            class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                            <i class="fas fa-video mr-2"></i> Join Zoom Meeting
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Application Materials -->
+                                <div class="mt-6">
+                                    <h4 class="text-lg font-medium text-gray-900 mb-2">Your Application Materials</h4>
+                                    <div class="space-y-3">
+                                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-md">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-file-pdf text-red-500 text-lg mr-3"></i>
+                                                <span class="text-sm text-gray-900">Resume_John_Smith.pdf</span>
+                                            </div>
+                                            <button type="button" class="text-indigo-600 hover:text-indigo-500">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-md">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-file-alt text-blue-500 text-lg mr-3"></i>
+                                                <span class="text-sm text-gray-900">Cover_Letter_John_Smith.pdf</span>
+                                            </div>
+                                            <button type="button" class="text-indigo-600 hover:text-indigo-500">
+                                                <i class="fas fa-download"></i>
+                                            </button>
+                                        </div>
+                                        <div class="flex items-center justify-between p-3 bg-gray-50 rounded-md">
+                                            <div class="flex items-center">
+                                                <i class="fas fa-link text-green-500 text-lg mr-3"></i>
+                                                <span class="text-sm text-gray-900">Portfolio Website</span>
+                                            </div>
+                                            <a href="#" class="text-indigo-600 hover:text-indigo-500">
+                                                <i class="fas fa-external-link-alt"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Job Description -->
+                                <div class="mt-6">
+                                    <h4 class="text-lg font-medium text-gray-900 mb-2">Job Description</h4>
+                                    <div class="text-sm text-gray-500">
+                                        <p class="mb-2">We're looking for an experienced Frontend Developer to join our
+                                            team. You'll be responsible for building responsive web applications using
+                                            React, TypeScript, and modern CSS frameworks.</p>
+                                        <p>This role offers competitive compensation, flexible work arrangements, and
+                                            opportunities for professional growth in a collaborative environment.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button type="button" id="withdraw-application-btn"
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        Withdraw Application
+                    </button>
+                    <button type="button" id="contact-employer-btn"
+                        class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                        <i class="fas fa-envelope mr-2"></i> Contact Employer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // User menu dropdown
+            const userMenuButton = document.getElementById('user-menu-button');
+            const userMenuDropdown = document.getElementById('user-menu-dropdown');
+
+            userMenuButton.addEventListener('click', function () {
+                userMenuDropdown.classList.toggle('hidden');
+            });
+
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function (event) {
+                if (!userMenuButton.contains(event.target) && !userMenuDropdown.contains(event.target)) {
+                    userMenuDropdown.classList.add('hidden');
+                }
+            });
+
+            // Status filter change
+            const statusFilter = document.getElementById('status-filter');
+
+            statusFilter.addEventListener('change', function () {
+                // In a real app, this would filter the applications list
+                console.log(`Filtering by status: ${this.value}`);
+            });
+
+            // Date filter change
+            const dateFilter = document.getElementById('date-filter');
+
+            dateFilter.addEventListener('change', function () {
+                // In a real app, this would filter the applications list
+                console.log(`Filtering by date range: ${this.value}`);
+            });
+
+            // Search functionality
+            const searchInput = document.getElementById('search');
+
+            searchInput.addEventListener('input', function () {
+                // In a real app, this would search the applications list
+                console.log(`Searching for: ${this.value}`);
+            });
+
+            // View application details
+            const viewDetailsButtons = document.querySelectorAll('button:contains("View Details")');
+            const applicationDetailsModal = document.getElementById('application-details-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+
+            // Helper function to find buttons with text content
+            function getButtonsByText(text) {
+                return Array.from(document.querySelectorAll('button')).filter(button =>
+                    button.textContent.trim().includes(text)
+                );
+            }
+
+            // Get all "View Details" buttons
+            const detailButtons = getButtonsByText('View Details');
+
+            detailButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // In a real app, we would fetch the application details from the server
+                    // For now, we'll just show the modal
+                    applicationDetailsModal.classList.remove('hidden');
+                });
+            });
+
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', function () {
+                    applicationDetailsModal.classList.add('hidden');
+                });
+            }
+
+            // Withdraw application
+            const withdrawButtons = getButtonsByText('Withdraw');
+
+            withdrawButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    if (confirm('Are you sure you want to withdraw this application? This action cannot be undone.')) {
+                        // In a real app, this would send a request to withdraw the application
+                        alert('Application withdrawn successfully.');
+
+                        // Remove the application from the list (for demo purposes)
+                        const listItem = this.closest('li');
+                        if (listItem) {
+                            listItem.remove();
+                        }
+                    }
+                });
+            });
+
+            // Archive application
+            const archiveButtons = getButtonsByText('Archive');
+
+            archiveButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    if (confirm('Are you sure you want to archive this application?')) {
+                        // In a real app, this would send a request to archive the application
+                        alert('Application archived successfully.');
+
+                        // Remove the application from the list (for demo purposes)
+                        const listItem = this.closest('li');
+                        if (listItem) {
+                            listItem.remove();
+                        }
+                    }
+                });
+            });
+
+            // Modal withdraw application button
+            const withdrawApplicationBtn = document.getElementById('withdraw-application-btn');
+
+            if (withdrawApplicationBtn) {
+                withdrawApplicationBtn.addEventListener('click', function () {
+                    if (confirm('Are you sure you want to withdraw this application? This action cannot be undone.')) {
+                        // In a real app, this would send a request to withdraw the application
+                        alert('Application withdrawn successfully.');
+                        applicationDetailsModal.classList.add('hidden');
+
+                        // Refresh the page or update the UI
+                        // For demo purposes, we'll just reload the page
+                        // location.reload();
+                    }
+                });
+            }
+
+            // Modal contact employer button
+            const contactEmployerBtn = document.getElementById('contact-employer-btn');
+
+            if (contactEmployerBtn) {
+                contactEmployerBtn.addEventListener('click', function () {
+                    // In a real app, this would open a messaging interface
+                    alert('Messaging functionality would be implemented here.');
+                });
+            }
+
+            // Close modal when clicking outside
+            if (applicationDetailsModal) {
+                applicationDetailsModal.addEventListener('click', function (event) {
+                    if (event.target === applicationDetailsModal) {
+                        applicationDetailsModal.classList.add('hidden');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
